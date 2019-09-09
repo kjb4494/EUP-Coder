@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f86de23c-5dc0-4ab8-b5e1-d4a104bae65a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/EUP-Coder.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/backend/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/backend/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/backend/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/backend/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/backend/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/backend/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/eup_coder/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/eup_coder/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/eup_coder/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/eup_coder/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/Pe-icon-7-stroke.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/Pe-icon-7-stroke.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/Pe-icon-7-stroke.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/Pe-icon-7-stroke.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/logo-inverse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/assets/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/images/user-logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/templates/index.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eup_coder/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eup_coder/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>app-header__content</find>
+      <find>link</find>
+      <find>font</find>
+      <find>src:url</find>
+      <find>url(</find>
+      <find>src</find>
+      <find>images</find>
+      <find>{% sta</find>
+      <find>ar</find>
+      <find>logo-inver</find>
+      <find>logo</find>
+      <find>app-header__logo</find>
+      <find>Analytics Dashboard</find>
+      <find>Analytics Dashboard</find>
+      <find>Layout Options</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/eup_coder/eup_coder/settings.py" />
+        <option value="$PROJECT_DIR$/eup_coder/backend/views.py" />
+        <option value="$PROJECT_DIR$/eup_coder/eup_coder/urls.py" />
+        <option value="$PROJECT_DIR$/eup_coder/static/css/main.css" />
+        <option value="$PROJECT_DIR$/eup_coder/templates/index.html" />
+        <option value="$PROJECT_DIR$/eup_coder/templates/base.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1373" />
+    <option name="height" value="958" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/eup_coder/static/images" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eup_coder/static/css/assets/images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eup_coder/static/images" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/css/assets/images" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/css" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f86de23c-5dc0-4ab8-b5e1-d4a104bae65a" name="Default Changelist" comment="" />
+      <created>1567992938008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567992938008</updated>
+      <workItem from="1567992940201" duration="6903000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6903000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1373" height="958" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21187077" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/eup_coder/eup_coder/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#668#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/backend/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/eup_coder/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/css/assets/images/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/css/assets/images/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/css/assets/images/logo-inverse.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/css/assets/images/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1387">
+          <caret line="9" column="153627" lean-forward="true" selection-start-line="9" selection-start-column="153627" selection-end-line="9" selection-end-column="153627" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3795" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
