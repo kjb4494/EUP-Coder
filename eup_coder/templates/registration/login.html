@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block page-title %}
+  <div class="page-title-icon">
+    <i class="fa fa-exclamation icon-gradient bg-deep-blue"></i>
+  </div>
+  <div>Admin Login</div>
+{% endblock page-title %}
+
+{% block page-content %}
+  <div class="main-card mb-3 card">
+    <div class="card-body">
+      <h5 style="text-align: center; color: #4f4f4f">관리자 접속</h5>
+      <hr>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="position-relative form-group">
+          <label for="exampleEmail11" class="">Username</label>
+          <input placeholder="유저명 입력" type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}" autofocus>
+        </div>
+        <div class="position-relative form-group">
+          <label for="examplePassword11" class="">Password</label>
+          <input placeholder="패스워드 입력" type="password" class="form-control" id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}">
+        </div>
+        {% if form.errors %}
+          <p style="color: #a41515">
+            유저명과 비밀번호가 일치하지않습니다. 다시 시도해주세요.
+          </p>
+        {% else %}
+          <br>
+        {% endif %}
+        <button class="mb-2 mr-2 btn btn-secondary btn-lg btn-block">로그인</button>
+      </form>
+    </div>
+  </div>
+{% endblock page-content %}
+
+{% block hide-sidebar %}hidden{% endblock hide-sidebar %}

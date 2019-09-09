@@ -15,9 +15,16 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from backend import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', views.index, name='home')
+    path('', views.index, name='home'),
+    path('code-builder/', views.code_builder, name='code-builder'),
+    path('code-builder-json/', views.code_builder_json, name='code-builder-json'),
+
+    # 인증
+    path('auth/login/', auth_views.LoginView.as_view(), name='login'),
+    path('auth/logout/', auth_views.LogoutView.as_view(), name='logout')
 ]

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.min.css' %}"/>
+{% endblock css %}
+
+{% block sidebar-content %}
+{% endblock sidebar-content %}
+
+{% block page-title %}
+  <div class="page-title-icon">
+    <i class="fa fa-hammer icon-gradient bg-arielle-smile"></i>
+  </div>
+  <div>Code Builder</div>
+{% endblock page-title %}
+
+{% block page-title-actions %}
+  <button class="btn-shadow mr-3 btn btn-dark">상태 저장하기</button>
+{% endblock page-title-actions %}
+
+{% block page-content %}
+  <div class="main-card mb-3 card">
+    <div class="card-body">
+      <table class="mb-0 table table-striped table-hover" id="code-builder-table" style="width: 100%">
+        <thead>
+          <tr>
+            <th>일련번호</th>
+            <th>특성</th>
+            <th>종류</th>
+            <th>적용방식</th>
+            <th>기본값</th>
+            <th>변경값</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock page-content %}
+
+{% block js %}
+  <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/datatables.min.js' %}"></script>
+  <script type="text/javascript">
+    var table = $('#code-builder-table').DataTable({
+      stateSave: true,
+      "processing": true,
+      "ajax": {
+        "processing": true,
+        "url": "{% url 'code-builder-json' %}",
+        "dataSrc": "",
+      },
+      "columns": [
+          {data: 'pk'},
+          {data: 'fields.description_ko'},
+          {data: 'fields.modifier_type'},
+          {data: 'fields.effect_type'},
+          {data: 'fields.default_value'},
+          {data: 'fields.current_value'}
+      ]
+    });
+  </script>
+{% endblock js %}

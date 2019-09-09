@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
+{% load static%}
+
+{% block css %}
+{% endblock css %}
 
 {% block sidebar-content %}
 {% endblock sidebar-content %}
 
 {% block page-title %}
   <div class="page-title-icon">
-    <i class="fa fa-hammer icon-gradient bg-arielle-smile"></i>
+    <i class="fa fa-archive icon-gradient bg-sunny-morning"></i>
   </div>
-  <div>Code Builder</div>
+  <div>Home</div>
 {% endblock page-title %}
+
+{% block page-title-actions %}
+  <button class="btn-shadow mr-3 btn btn-primary">실험용 버튼</button>
+{% endblock page-title-actions %}
 
 {% block page-content %}
   <div class="row">
-    1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-  1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-  1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-  1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-  1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-  1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
-  1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
+    메인페이지입니다. 테스트 중!
   </div>
 {% endblock page-content %}
+
+{% block js %}
+{% endblock js %}
+
+{% block hide-sidebar %}hidden{% endblock hide-sidebar %}

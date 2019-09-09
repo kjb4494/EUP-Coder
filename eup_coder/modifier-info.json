@@ -1,0 +1,2170 @@
+{
+	"army_tradition": {
+		"type": "Military",
+		"default_value": 0.5,
+		"description": "Adds to the rate of Army Tradition gained each year.",
+		"effect_type": "Additive",
+		"description_ko": "연간 육군 전통",
+		"index": 1
+	},
+	"army_tradition_decay": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Adds to the decay rate of Army Tradition.",
+		"effect_type": "Additive",
+		"description_ko": "연간 육군 전통 감소",
+		"index": 2
+	},
+	"army_tradition_from_battle": {
+		"type": "Military",
+		"default_value": 0.05,
+		"description": "Modifies the Army Tradition bonus when gained through battles.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전투로부터 얻는 육군 전통",
+		"index": 3
+	},
+	"yearly_army_professionalism": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the rate of Army Professionalism gained each year.",
+		"effect_type": "Multiplicative",
+		"description_ko": "연간 군대 전문성",
+		"index": 4
+	},
+	"drill_gain_modifier": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the army drill gains while drilling",
+		"effect_type": "Multiplicative",
+		"description_ko": "군대 훈련도 획득 변동치",
+		"index": 5
+	},
+	"drill_decay_modifier": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the army drill decay rate per year.",
+		"effect_type": "Multiplicative",
+		"description_ko": "군대 훈련도 감소 변동치",
+		"index": 6
+	},
+	"infantry_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of infantry units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "보병 비용",
+		"index": 7
+	},
+	"infantry_power": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the power infantry gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "보병 전투력",
+		"index": 8
+	},
+	"infantry_fire": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the base Fire pips for infantry.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 9
+	},
+	"infantry_shock": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the base Shock pips for infantry.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 10
+	},
+	"cavalry_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of cavalry units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "기병 비용",
+		"index": 11
+	},
+	"cavalry_power": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the power cavalry gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "기병 전투력",
+		"index": 12
+	},
+	"cavalry_fire": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the base Fire pips for cavalry.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 13
+	},
+	"cavalry_shock": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the base Shock pips for cavalry.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 14
+	},
+	"artillery_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of artillery units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "포병 비용",
+		"index": 15
+	},
+	"artillery_power": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the power artillery gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "포병 전투력",
+		"index": 16
+	},
+	"artillery_fire": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the base Fire pips for artillery.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 17
+	},
+	"artillery_shock": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the base Shock pips for artillery.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 18
+	},
+	"cav_to_inf_ratio": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Adds to the ratio required to negate the Insufficient Support penalty.",
+		"effect_type": "Additive",
+		"description_ko": "기병 대 보병 비율",
+		"index": 19
+	},
+	"cavalry_flanking": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the effectiveness of cavalry flanking.",
+		"effect_type": "Multiplicative",
+		"description_ko": "기병 측면 공격 능력",
+		"index": 20
+	},
+	"artillery_bonus_vs_fort": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the bonus artillery get versus forts.",
+		"effect_type": "Additive",
+		"description_ko": "요새에 대한 포병 보너스",
+		"index": 21
+	},
+	"backrow_artillery_damage": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the bonus damage artillery inflict when in the backrow during combat.",
+		"effect_type": "Multiplicative",
+		"description_ko": "뒷열 포병의 피해량",
+		"index": 22
+	},
+	"discipline": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the discipline of land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "규율",
+		"index": 23
+	},
+	"mercenary_discipline": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the discipline of mercenary units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "용병 규율",
+		"index": 24
+	},
+	"land_morale": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the land morale of land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육군 사기",
+		"index": 25
+	},
+	"defensiveness": {
+		"type": "Military",
+		"default_value": 0.25,
+		"description": "Modifies the siege defensiveness that affects siege phase length.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육군 소모",
+		"index": 26
+	},
+	"siege_ability": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the siege ability that affects siege phase length. Reverse concept of defensiveness.",
+		"effect_type": "Multiplicative",
+		"description_ko": "공성 능력",
+		"index": 27
+	},
+	"movement_speed": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the base movement speed for all land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "이동 속도",
+		"index": 28
+	},
+	"fire_damage": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the fire damage done by land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "지상 사격 피해",
+		"index": 29
+	},
+	"fire_damage_received": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the fire damage taken by land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "받은 사격 피해",
+		"index": 30
+	},
+	"shock_damage": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the shock damage done by land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "충격 피해",
+		"index": 31
+	},
+	"shock_damage_received": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the shock damage taken by land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "받은 충격 피해",
+		"index": 32
+	},
+	"recover_army_morale_speed": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the army morale recovery speed.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육군 사기 회복 속도",
+		"index": 33
+	},
+	"siege_blockade_progress": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Modifies the bonus siege status by blockaded.",
+		"effect_type": "Additive",
+		"description_ko": "공성전에 대한 해상봉쇄 효과",
+		"index": 34
+	},
+	"reserves_organisation": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the morale damage taken by units in reserves (i.e. not in battle, but engaged with another unit)",
+		"effect_type": "Multiplicative",
+		"description_ko": "예비대가 받는 사기 피해 감소",
+		"index": 35
+	},
+	"land_attrition": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the attrition taken by land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육군 소모",
+		"index": 36
+	},
+	"reinforce_cost_modifier": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the cost of reinforcements when units are reinforced.",
+		"effect_type": "Multiplicative",
+		"description_ko": "충원 비용",
+		"index": 37
+	},
+	"reinforce_speed": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the rate at which units are reinforced with new men.",
+		"effect_type": "Multiplicative",
+		"description_ko": "충원 속도 증가",
+		"index": 38
+	},
+	"manpower_recovery_speed": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the rate at which manpower is recovered.",
+		"effect_type": "Multiplicative",
+		"description_ko": "인력 보충 속도",
+		"index": 39
+	},
+	"global_manpower": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the country's total manpower pool. 1 equals 1000 men.",
+		"effect_type": "Additive",
+		"description_ko": "인력 증가",
+		"index": 40
+	},
+	"global_manpower_modifier": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies a country's total manpower pool.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국가 인력 변동치",
+		"index": 41
+	},
+	"global_regiment_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base unit cost for all land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "연대 비용",
+		"index": 42
+	},
+	"global_regiment_recruit_speed": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base speed at which land units are recruited.",
+		"effect_type": "Multiplicative",
+		"description_ko": "모집 기간",
+		"index": 43
+	},
+	"global_supply_limit_modifier": {
+		"type": "Military",
+		"default_value": 0.33,
+		"description": "Modifies the supply limit of provinces",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 44
+	},
+	"land_forcelimit": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to a country's force limit.",
+		"effect_type": "Additive",
+		"description_ko": "육군 병력 한계",
+		"index": 45
+	},
+	"land_forcelimit_modifier": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies a country's force limit.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육군 병력 한계 변동치",
+		"index": 46
+	},
+	"land_maintenance_modifier": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the maintenance cost of all land units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육군 유지비 변동치",
+		"index": 47
+	},
+	"mercenary_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base cost for mercenary units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "용병 고용 비용",
+		"index": 48
+	},
+	"merc_maintenance_modifier": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the maintenance cost of all mercenary units.",
+		"effect_type": "Multiplicative",
+		"description_ko": "용병 유지비",
+		"index": 49
+	},
+	"possible_condottieri": {
+		"type": "Military",
+		"default_value": 0.5,
+		"description": "Modifies the base condottieri limit.",
+		"effect_type": "Multiplicative",
+		"description_ko": "가능한 콘도티에리",
+		"index": 50
+	},
+	"possible_mercenaries": {
+		"type": "Military",
+		"default_value": 0.5,
+		"description": "Modifies the base mercenary limit.",
+		"effect_type": "Multiplicative",
+		"description_ko": "고용 가능한 용병",
+		"index": 51
+	},
+	"hostile_attrition": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the attrition enemies take in a country's provinces.",
+		"effect_type": "Additive",
+		"description_ko": "적대적 군대의 소모율",
+		"index": 52
+	},
+	"garrison_size": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the base garrison size in provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "주둔군 크기",
+		"index": 53
+	},
+	"global_garrison_growth": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the base garrison growth in provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국가적 주둔군 증원률",
+		"index": 54
+	},
+	"fort_maintenance_modifier": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base fort maintenance cost.",
+		"effect_type": "Multiplicative",
+		"description_ko": "요새 유지비",
+		"index": 55
+	},
+	"rival_border_fort_maintenance": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base fort maintenance cost for forts in provinces that border rivals.",
+		"effect_type": "Multiplicative",
+		"description_ko": "경쟁국과 접한 국경의 요새 유지비",
+		"index": 56
+	},
+	"war_exhaustion": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Adds to the monthly war exhaustion rate.",
+		"effect_type": "Additive",
+		"description_ko": "매월 전쟁 피로도",
+		"index": 57
+	},
+	"war_exhaustion_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the diplomatic power cost for reducing war exhaustion.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전쟁 피로도 절감 비용",
+		"index": 58
+	},
+	"leader_land_fire": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the minimum fire pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "육군 지휘관 사격",
+		"index": 59
+	},
+	"leader_land_manuever": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the minimum maneuver pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "육군 지휘관 기동력",
+		"index": 60
+	},
+	"leader_land_shock": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the minimum shock pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "육군 지휘관 충격",
+		"index": 61
+	},
+	"leader_siege": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the minimum siege pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "지휘관 공성",
+		"index": 62
+	},
+	"general_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the base military power cost for recruiting Generals.",
+		"effect_type": "Multiplicative",
+		"description_ko": "장군 유지비",
+		"index": 63
+	},
+	"free_leader_pool": {
+		"type": "Military",
+		"default_value": 1.0,
+		"description": "Adds to the maximum amount of free leaders.",
+		"effect_type": "Additive",
+		"description_ko": "비용 없이 보유 가능한 지휘관 제한",
+		"index": 64
+	},
+	"raze_power_gain": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the amount of monarch power gained from razing.",
+		"effect_type": "Multiplicative",
+		"description_ko": "초토화 점수 획득",
+		"index": 65
+	},
+	"loot_amount": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the amount of loot taken at once during looting.",
+		"effect_type": "Multiplicative",
+		"description_ko": "약탈 속도",
+		"index": 66
+	},
+	"prestige_from_land": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the prestige bonus from combat.",
+		"effect_type": "Multiplicative",
+		"description_ko": "육상 전투로 인한 위신",
+		"index": 67
+	},
+	"amount_of_banners": {
+		"type": "Military",
+		"default_value": 0.1,
+		"description": "Modifies the maximum amount of banners available.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 68
+	},
+	"war_taxes_cost_modifier": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the military power cost for raising war taxes.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전쟁세금 비용",
+		"index": 69
+	},
+	"leader_cost": {
+		"type": "Military",
+		"default_value": -0.1,
+		"description": "Modifies the military power cost for hiring leaders.",
+		"effect_type": "Multiplicative",
+		"description_ko": "지휘관 비용",
+		"index": 70
+	},
+	"navy_tradition": {
+		"type": "Navy",
+		"default_value": 1.0,
+		"description": "Adds to the yearly Navy Tradition rate.",
+		"effect_type": "Additive",
+		"description_ko": "연간 해군 전통",
+		"index": 71
+	},
+	"navy_tradition_decay": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Adds to the decay rate of Navy Tradition.",
+		"effect_type": "Additive",
+		"description_ko": "연간 해군 전통 감소",
+		"index": 72
+	},
+	"naval_tradition_from_battle": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the base Navy Tradition gained from battles.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전투로부터 얻는 해군 전통",
+		"index": 73
+	},
+	"naval_tradition_from_trade": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the base Navy Tradition gained from protecting trade.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 74
+	},
+	"heavy_ship_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of heavy ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "대형선 비용",
+		"index": 75
+	},
+	"heavy_ship_power": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the power heavy ships gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "대형선 전투력",
+		"index": 76
+	},
+	"light_ship_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of light ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "소형선 비용",
+		"index": 77
+	},
+	"light_ship_power": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the power light ships gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "소형선 전투력",
+		"index": 78
+	},
+	"galley_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of galley ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "갤리선 비용",
+		"index": 79
+	},
+	"galley_power": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the power galley ships gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "갤리선 전투력",
+		"index": 80
+	},
+	"transport_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of transport ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "수송선 비용",
+		"index": 81
+	},
+	"transport_power": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the power transport ships gain from unit pips.",
+		"effect_type": "Multiplicative",
+		"description_ko": "수송선 전투력",
+		"index": 82
+	},
+	"global_ship_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the base cost of all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "함선 비용",
+		"index": 83
+	},
+	"global_ship_recruit_speed": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the base recruitmend speed of all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "조선 기간",
+		"index": 84
+	},
+	"global_ship_repair": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the base repair speed (in port) of all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전국 함선 수리",
+		"index": 85
+	},
+	"naval_forcelimit": {
+		"type": "Navy",
+		"default_value": 1.0,
+		"description": "Adds to a country's naval force limit.",
+		"effect_type": "Additive",
+		"description_ko": "해군 병력 한계",
+		"index": 86
+	},
+	"naval_forcelimit_modifier": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies a country's naval force limit.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해군 병력 한계 변동치",
+		"index": 87
+	},
+	"naval_maintenance_modifier": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the naval maintenance for all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해군 유지비 변동치",
+		"index": 88
+	},
+	"global_sailors": {
+		"type": "Navy",
+		"default_value": 1000.0,
+		"description": "Adds to a country's maximum sailor pool.",
+		"effect_type": "Additive",
+		"description_ko": "선원 증가",
+		"index": 89
+	},
+	"global_sailors_modifier": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies a country's maximum sailor pool.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국가 선원 변동치",
+		"index": 90
+	},
+	"sailor_maintenance_modifer": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the sailor maintenance for all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "선원 소모",
+		"index": 91
+	},
+	"sailors_recovery_speed": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the sailor recovery rate for all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "선원 회복 속도",
+		"index": 92
+	},
+	"blockade_efficiency": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the efficiency of blockades against enemies.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해안 봉쇄 효과",
+		"index": 93
+	},
+	"capture_ship_chance": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Adds to the chance for ship capture during naval battles.",
+		"effect_type": "Additive",
+		"description_ko": "적국 선박 나포 확률",
+		"index": 94
+	},
+	"global_naval_engagement_modifier": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the maximum naval engagement width.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전체 해군 교전",
+		"index": 95
+	},
+	"naval_attrition": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the naval attrition taken by ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해군 소모",
+		"index": 96
+	},
+	"naval_morale": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the naval morale of all ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해군 사기",
+		"index": 97
+	},
+	"ship_durability": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the durability of all ships. (discipline for ships)",
+		"effect_type": "Multiplicative",
+		"description_ko": "함선 내구성",
+		"index": 98
+	},
+	"sunk_ship_morale_hit_recieved": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the morale damage taken during battle by losing ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "함선을 잃을 때 발생하는 사기 피해",
+		"index": 99
+	},
+	"recover_navy_morale_speed": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the morale recovery rate of ships.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해군 사기 회복 속도",
+		"index": 100
+	},
+	"prestige_from_naval": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the prestige gained through naval battles.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해군 전투로 인한 위신",
+		"index": 101
+	},
+	"leader_naval_fire": {
+		"type": "Navy",
+		"default_value": 1.0,
+		"description": "Adds to the minimum fire pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "해군 지휘관 사격",
+		"index": 102
+	},
+	"leader_naval_manuever": {
+		"type": "Navy",
+		"default_value": 1.0,
+		"description": "Adds to the minimum manuever pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "해군 지휘관 기동력",
+		"index": 103
+	},
+	"leader_naval_shock": {
+		"type": "Navy",
+		"default_value": 1.0,
+		"description": "Adds to the minimum shock pip count a leader can be generated with.",
+		"effect_type": "Additive",
+		"description_ko": "해군 지휘관 충격",
+		"index": 104
+	},
+	"own_coast_naval_combat_bonus": {
+		"type": "Navy",
+		"default_value": 1.0,
+		"description": "Modifies the combat bonus navies gain when sailing in coastal tiles that border their home nation.",
+		"effect_type": "Multiplicative",
+		"description_ko": "소유 해안 지역에서 해군 전투 보너스",
+		"index": 105
+	},
+	"admiral_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the cost of hiring an Admiral.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 106
+	},
+	"admiral_skill_gain_modifier": {
+		"type": "Navy",
+		"default_value": 0.1,
+		"description": "Modifies the chance of an Admiral gaining a Leader Trait after a battle.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 107
+	},
+	"movement_speed_onto_off_boat_modifier": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the speed at which troops disembark off ships into provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 108
+	},
+	"global_naval_barrage_cost": {
+		"type": "Navy",
+		"default_value": -0.1,
+		"description": "Modifies the cost for using the Naval Barrage action.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 109
+	},
+	"flagship_durability": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the ship durability for the flagship.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 110
+	},
+	"flagship_morale": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the naval morale for the flagship.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 111
+	},
+	"flagship_naval_engagement_modifier": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the global naval engagement size for the flagship.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 112
+	},
+	"flagship_landing_penalty": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the disembarkment penalty for the flagship.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 113
+	},
+	"number_of_cannons_flagship_modifier": {
+		"type": "Flagships",
+		"default_value": 0.1,
+		"description": "Modifies the number of cannons for the flagship.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 114
+	},
+	"naval_maintenance_flagship_modifier": {
+		"type": "Flagships",
+		"default_value": -0.1,
+		"description": "Modifies the naval maintenance for the flagship.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 115
+	},
+	"trade_power_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the trade power conferred by the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 116
+	},
+	"morale_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 0.1,
+		"description": "Modifies the naval morale for the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 117
+	},
+	"blockade_impact_on_siege_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 0.1,
+		"description": "Modifies the blockade impact of the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 118
+	},
+	"exploration_mission_range_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 100.0,
+		"description": "Modifies the Exploration Mission range for the flagship and all other ships within its fleet.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 119
+	},
+	"barrage_cost_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": -0.1,
+		"description": "Modifies the Naval Barrage action cost for the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 120
+	},
+	"naval_attrition_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": -0.1,
+		"description": "Modifies the naval attrition suffered by the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 121
+	},
+	"privateering_efficiency_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 0.1,
+		"description": "Modifies the privateering efficiency of the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 122
+	},
+	"prestige_from_battles_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the amount of prestige gained from battles for the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 123
+	},
+	"naval_tradition_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the amount of Naval Tradition gained from battles for the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 124
+	},
+	"cannons_for_hunting_pirates_in_fleet": {
+		"type": "Flagships",
+		"default_value": 1.0,
+		"description": "Modifies the amount of cannons for the flagship and all other ships within its fleet whilst on the Hunting Pirates mission.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 125
+	},
+	"movement_speed_in_fleet_modifier": {
+		"type": "Flagships",
+		"default_value": 0.1,
+		"description": "Modifies the movement speed for the flagship and all other ships within its fleet.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 126
+	},
+	"diplomats": {
+		"type": "Diplomacy",
+		"default_value": 1.0,
+		"description": "Adds to a country's diplomat count.",
+		"effect_type": "Additive",
+		"description_ko": "외교관",
+		"index": 127
+	},
+	"diplomatic_reputation": {
+		"type": "Diplomacy",
+		"default_value": 1.0,
+		"description": "Adds to a country's diplomatic reputation.",
+		"effect_type": "Additive",
+		"description_ko": "외교적 평판",
+		"index": 128
+	},
+	"diplomatic_upkeep": {
+		"type": "Diplomacy",
+		"default_value": 1.0,
+		"description": "Adds to the maximum number of free diplomatic relations.",
+		"effect_type": "Additive",
+		"description_ko": "외교적 관계",
+		"index": 129
+	},
+	"envoy_travel_time": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies diplomat travel time during actions.",
+		"effect_type": "Multiplicative",
+		"description_ko": "특사 소요 시간",
+		"index": 130
+	},
+	"fabricate_claims_cost": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies spy network cost for fabricating claim.",
+		"effect_type": "Multiplicative",
+		"description_ko": "클레임 조작 비용",
+		"index": 131
+	},
+	"improve_relation_modifier": {
+		"type": "Diplomacy",
+		"default_value": 0.2,
+		"description": "Modifies the speed of the Improve Relations diplomatic action.",
+		"effect_type": "Multiplicative",
+		"description_ko": "관계 개선",
+		"index": 132
+	},
+	"vassal_forcelimit_bonus": {
+		"type": "Diplomacy",
+		"default_value": 0.2,
+		"description": "Modifies the bonus to a country's forcelimit from their subjects.",
+		"effect_type": "Multiplicative",
+		"description_ko": "속국 병력 한계 기여도",
+		"index": 133
+	},
+	"vassal_income": {
+		"type": "Diplomacy",
+		"default_value": 0.2,
+		"description": "Modifies the bonus to a country's income from their subjects.",
+		"effect_type": "Multiplicative",
+		"description_ko": "종속국으로부터의 수입",
+		"index": 134
+	},
+	"ae_impact": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies the total size of Aggressive Expansion gained during actions that confer it.",
+		"effect_type": "Multiplicative",
+		"description_ko": "공격적인 확장 영향",
+		"index": 135
+	},
+	"claim_duration": {
+		"type": "Diplomacy",
+		"default_value": 0.2,
+		"description": "Modifies the duration of claims.",
+		"effect_type": "Multiplicative",
+		"description_ko": "클레임 지속 시간",
+		"index": 136
+	},
+	"diplomatic_annexation_cost": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies the diplomatic power cost for annexation.",
+		"effect_type": "Multiplicative",
+		"description_ko": "외교 합병 비용",
+		"index": 137
+	},
+	"province_warscore_cost": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies the warscore cost for taking provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "지역 승점 비용",
+		"index": 138
+	},
+	"unjustified_demands": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies the weighting of demands in peace treaties.",
+		"effect_type": "Multiplicative",
+		"description_ko": "정당하지 않은 요구",
+		"index": 139
+	},
+	"enemy_core_creation": {
+		"type": "Diplomacy",
+		"default_value": 0.2,
+		"description": "Modifies the cost of coring provinces for enemies that have your cores.",
+		"effect_type": "Multiplicative",
+		"description_ko": "우리에 대한 적대적 코어 생성 비용",
+		"index": 140
+	},
+	"rival_change_cost": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies the diplomatic power cost to change rivals.",
+		"effect_type": "Multiplicative",
+		"description_ko": "경쟁국 변경 비용",
+		"index": 141
+	},
+	"justify_trade_conflict_cost": {
+		"type": "Diplomacy",
+		"default_value": -0.2,
+		"description": "Modifies the spy network cost to justify trade conflicts.",
+		"effect_type": "Multiplicative",
+		"description_ko": "무역 분쟁을 정당화하기 위한 비용",
+		"index": 142
+	},
+	"global_tax_income": {
+		"type": "Economy",
+		"default_value": 12.0,
+		"description": "Adds to the base tax income per year (i.e. 12 equals 1 extra per month).",
+		"effect_type": "Additive",
+		"description_ko": "조세 수입",
+		"index": 143
+	},
+	"global_tax_modifier": {
+		"type": "Economy",
+		"default_value": 0.05,
+		"description": "Modifies the base tax income by a percentage.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국가 조세 변동치",
+		"index": 144
+	},
+	"production_efficiency": {
+		"type": "Economy",
+		"default_value": 0.05,
+		"description": "Modifies the base production income by a percentage.",
+		"effect_type": "Multiplicative",
+		"description_ko": "생산 효율",
+		"index": 145
+	},
+	"state_maintenance_modifier": {
+		"type": "Economy",
+		"default_value": -0.25,
+		"description": "Modifies the maintenance cost for states.",
+		"effect_type": "Multiplicative",
+		"description_ko": "주 유지비",
+		"index": 146
+	},
+	"inflation_action_cost": {
+		"type": "Economy",
+		"default_value": -0.1,
+		"description": "Modifies the administrative power cost for reducing inflation.",
+		"effect_type": "Multiplicative",
+		"description_ko": "인플레이션 감소 비용",
+		"index": 147
+	},
+	"inflation_reduction": {
+		"type": "Economy",
+		"default_value": 0.1,
+		"description": "Adds to the base yearly inflation rate.",
+		"effect_type": "Additive",
+		"description_ko": "연 인플레이션 감소",
+		"index": 148
+	},
+	"interest": {
+		"type": "Economy",
+		"default_value": -1.0,
+		"description": "Adds to the base interest rate.",
+		"effect_type": "Additive",
+		"description_ko": "연간 이자",
+		"index": 149
+	},
+	"development_cost": {
+		"type": "Economy",
+		"default_value": -0.1,
+		"description": "Modifies the development cost for provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "개발 비용",
+		"index": 150
+	},
+	"build_cost": {
+		"type": "Economy",
+		"default_value": -0.1,
+		"description": "Modifies all building costs.",
+		"effect_type": "Multiplicative",
+		"description_ko": "건설 비용",
+		"index": 151
+	},
+	"build_time": {
+		"type": "Economy",
+		"default_value": -0.25,
+		"description": "Modifies all building construction times.",
+		"effect_type": "Multiplicative",
+		"description_ko": "건설 시간",
+		"index": 152
+	},
+	"administrative_efficiency": {
+		"type": "Economy",
+		"default_value": 0.2,
+		"description": "Modifies the base core creation cost, diplo-annexation costs and the impact of province development on overextension and warscore cost.",
+		"effect_type": "Multiplicative",
+		"description_ko": "행정 효율",
+		"index": 153
+	},
+	"core_creation": {
+		"type": "Economy",
+		"default_value": -0.1,
+		"description": "Modifies the base core creation cost.",
+		"effect_type": "Multiplicative",
+		"description_ko": "코어 생성 비용",
+		"index": 154
+	},
+	"core_decay_on_your_own": {
+		"type": "Economy",
+		"default_value": -0.1,
+		"description": "Modifies the rate at which the cores of a country will decay when under the ownership of a different country.",
+		"effect_type": "Multiplicative",
+		"description_ko": "외국 코어 지속 시간",
+		"index": 155
+	},
+	"adm_tech_cost_modifier": {
+		"type": "Technology",
+		"default_value": -0.1,
+		"description": "Modifies the monarch power cost of <tech> technologies. Generated automatically for all technology tables in /Europa Universalis IV/common/technology.txt.",
+		"effect_type": "Multiplicative",
+		"description_ko": "행정 기술 비용",
+		"index": 156
+	},
+	"technology_cost": {
+		"type": "Technology",
+		"default_value": -0.1,
+		"description": "Modifies the monarch power  cost of all technologies.",
+		"effect_type": "Multiplicative",
+		"description_ko": "기술 비용",
+		"index": 157
+	},
+	"idea_cost": {
+		"type": "Technology",
+		"default_value": -0.1,
+		"description": "Modifies the monarch power cost of purchasable ideas.",
+		"effect_type": "Multiplicative",
+		"description_ko": "이념 비용",
+		"index": 158
+	},
+	"embracement_cost": {
+		"type": "Technology",
+		"default_value": -0.1,
+		"description": "Modifies the ducat cost for embracing an institution.",
+		"effect_type": "Multiplicative",
+		"description_ko": "시대관 수용 비용",
+		"index": 159
+	},
+	"global_institution_spread": {
+		"type": "Technology",
+		"default_value": 0.1,
+		"description": "Modifies the rate of spread for institutions in all owned provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "시대관 전파 속도",
+		"index": 160
+	},
+	"institution_spread_from_true_faith": {
+		"type": "Technology",
+		"default_value": 0.1,
+		"description": "Modifies the rate of spread for institutions in owned provinces following the owner's religion.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국교 지역의 시대관 전파 속도",
+		"index": 161
+	},
+	"native_advancement_cost": {
+		"type": "Technology",
+		"default_value": -0.2,
+		"description": "Modifies the monarch power cost of native advancements.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 162
+	},
+	"all_power_cost": {
+		"type": "Technology",
+		"default_value": -0.1,
+		"description": "Modifies the monarch power cost of every action that costs monarch power.",
+		"effect_type": "Multiplicative",
+		"description_ko": "모든 군주 점수 비용",
+		"index": 163
+	},
+	"innovativeness_gain": {
+		"type": "Technology",
+		"default_value": 0.5,
+		"description": "Modifies the amount of Innovativeness gained",
+		"effect_type": "Multiplicative",
+		"description_ko": "혁신성 증가",
+		"index": 164
+	},
+	"free_adm_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of free Administrative policies.",
+		"effect_type": "Additive",
+		"description_ko": "무료 행정 정책",
+		"index": 165
+	},
+	"free_dip_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of free Diplomatic policies.",
+		"effect_type": "Additive",
+		"description_ko": "무료 외교 정책",
+		"index": 166
+	},
+	"free_mil_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of free Military policies.",
+		"effect_type": "Additive",
+		"description_ko": "무료 군사 정책",
+		"index": 167
+	},
+	"possible_adm_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of Administrative policy slots.",
+		"effect_type": "Additive",
+		"description_ko": "가능한 행정 정책",
+		"index": 168
+	},
+	"possible_dip_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of Diplomatic policy slots.",
+		"effect_type": "Additive",
+		"description_ko": "가능한 외교 정책",
+		"index": 169
+	},
+	"possible_mil_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of Military policy slots.",
+		"effect_type": "Additive",
+		"description_ko": "가능한 군사 정책",
+		"index": 170
+	},
+	"free_policy": {
+		"type": "Technology",
+		"default_value": 1.0,
+		"description": "Modifies the amount of policy slots.",
+		"effect_type": "Additive",
+		"description_ko": "무료 정책",
+		"index": 171
+	},
+	"prestige": {
+		"type": "Court",
+		"default_value": 0.5,
+		"description": "Adds to the base yearly rate of prestige.",
+		"effect_type": "Additive",
+		"description_ko": "연간 위신",
+		"index": 172
+	},
+	"prestige_decay": {
+		"type": "Court",
+		"default_value": -0.01,
+		"description": "Adds to the base rate of prestige decay.",
+		"effect_type": "Additive",
+		"description_ko": "위신 감소",
+		"index": 173
+	},
+	"monthly_splendor": {
+		"type": "Court",
+		"default_value": 1.0,
+		"description": "Adds to the monthly rate of splendor points.",
+		"effect_type": "Additive",
+		"description_ko": "매달 영광",
+		"index": 174
+	},
+	"yearly_corruption": {
+		"type": "Court",
+		"default_value": -0.1,
+		"description": "Adds to the yearly rate of corruption.",
+		"effect_type": "Additive",
+		"description_ko": "연간 부패도",
+		"index": 175
+	},
+	"advisor_cost": {
+		"type": "Court",
+		"default_value": -0.25,
+		"description": "Modifies the base cost of advisors.",
+		"effect_type": "Multiplicative",
+		"description_ko": "조언자 비용",
+		"index": 176
+	},
+	"advisor_pool": {
+		"type": "Court",
+		"default_value": 1.0,
+		"description": "Adds to the pool size for advisors.",
+		"effect_type": "Additive",
+		"description_ko": "가능한 조언자 *두 번 적용",
+		"index": 177
+	},
+	"female_advisor_chance": {
+		"type": "Court",
+		"default_value": 0.1,
+		"description": "Modifies the base chance rate for female advisors.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 178
+	},
+	"heir_chance": {
+		"type": "Court",
+		"default_value": 0.5,
+		"description": "Modifies the base chance for an heir during the heir generation tick.",
+		"effect_type": "Multiplicative",
+		"description_ko": "새 후계자의 가능성을 높이다",
+		"index": 179
+	},
+	"monarch_admin_power": {
+		"type": "Court",
+		"default_value": 1.0,
+		"description": "Adds to the base ADM skill a ruler, heir and consort can be generated with. Does not effect rulers created with fixed = yes.",
+		"effect_type": "Additive",
+		"description_ko": "군주 행정 능력",
+		"index": 180
+	},
+	"monarch_diplomatic_power": {
+		"type": "Court",
+		"default_value": 1.0,
+		"description": "Adds to the base DIP skill a ruler, heir and consort can be generated with. Does not effect rulers created with fixed = yes.",
+		"effect_type": "Additive",
+		"description_ko": "군주 외교 능력",
+		"index": 181
+	},
+	"monarch_military_power": {
+		"type": "Court",
+		"default_value": 1.0,
+		"description": "Adds to the base MIL skill a ruler, heir and consort can be generated with. Does not effect rulers created with fixed = yes.",
+		"effect_type": "Additive",
+		"description_ko": "군주 군사 능력",
+		"index": 182
+	},
+	"adm_advisor_cost": {
+		"type": "Court",
+		"default_value": -0.1,
+		"description": "Modifies the cost of hiring an Administrative advisor.",
+		"effect_type": "Multiplicative",
+		"description_ko": "행정 조언자 비용",
+		"index": 183
+	},
+	"dip_advisor_cost": {
+		"type": "Court",
+		"default_value": -0.1,
+		"description": "Modifies the cost of hiring an Diplomatic advisor.",
+		"effect_type": "Multiplicative",
+		"description_ko": "외교 조언자 비용",
+		"index": 184
+	},
+	"mil_advisor_cost": {
+		"type": "Court",
+		"default_value": -0.1,
+		"description": "Modifies the cost of hiring an Military advisor.",
+		"effect_type": "Multiplicative",
+		"description_ko": "군사 조언자 비용",
+		"index": 185
+	},
+	"monthly_support_heir_gain": {
+		"type": "Court",
+		"default_value": 0.1,
+		"description": "Modifies the monthly gain in support for the heir of a country in an country that uses the Elective Monarchy mechanics.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 186
+	},
+	"power_projection_from_insults": {
+		"type": "Court",
+		"default_value": 0.1,
+		"description": "Modifies the amount of Power Projection gained when using the Insult diplomatic action.",
+		"effect_type": "Multiplicative",
+		"description_ko": "모욕을 통한 세력 투사",
+		"index": 187
+	},
+	"yearly_absolutism": {
+		"type": "Government",
+		"default_value": 0.1,
+		"description": "Adds to the yearly base rate of absolutism.",
+		"effect_type": "Additive",
+		"description_ko": "연간 절대주의",
+		"index": 188
+	},
+	"max_absolutism": {
+		"type": "Government",
+		"default_value": 10.0,
+		"description": "Adds to the maximum value of absolutism. Internally absolutism bonuses do not scale above 100.",
+		"effect_type": "Additive",
+		"description_ko": "최대 절대주의",
+		"index": 189
+	},
+	"max_states": {
+		"type": "Government",
+		"default_value": 5.0,
+		"description": "Adds to the maximum number of states a country can support.",
+		"effect_type": "Additive",
+		"description_ko": "가능한 주의 수",
+		"index": 190
+	},
+	"legitimacy": {
+		"type": "Government",
+		"default_value": 1.0,
+		"description": "Adds to the yearly rate of legitimacy.Does not appear or have an effect if a country's government does not use legitimacy.",
+		"effect_type": "Additive",
+		"description_ko": "연간 정통성",
+		"index": 191
+	},
+	"republican_tradition": {
+		"type": "Government",
+		"default_value": 0.5,
+		"description": "Adds to the yearly rate of republican tradition.Does not appear or have an effect if a country's government does not use republican tradition.",
+		"effect_type": "Additive",
+		"description_ko": "연간 정통성",
+		"index": 192
+	},
+	"devotion": {
+		"type": "Government",
+		"default_value": 1.0,
+		"description": "Adds to the yearly rate of devotion.Does not appear or have an effect if a country's government does not use devotion.",
+		"effect_type": "Additive",
+		"description_ko": "연간 정통성",
+		"index": 193
+	},
+	"horde_unity": {
+		"type": "Government",
+		"default_value": 1.0,
+		"description": "Adds to the yearly rate of horde unity.Does not appear or have an effect if a country's government does not use horde unity.",
+		"effect_type": "Additive",
+		"description_ko": "연간 정통성",
+		"index": 194
+	},
+	"meritocracy": {
+		"type": "Government",
+		"default_value": 1.0,
+		"description": "Adds to the yearly rate of meritocracy. Does not appear or have an effect if a country's government does not use meritocracy.",
+		"effect_type": "Additive",
+		"description_ko": "연간 정통성",
+		"index": 195
+	},
+	"monthly_militarized_society": {
+		"type": "Government",
+		"default_value": 0.05,
+		"description": "Adds to the monthly rate of militarisation for governments with the militarisation mechanic.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 196
+	},
+	"yearly_tribal_allegiance": {
+		"type": "Government",
+		"default_value": 0.05,
+		"description": "Adds to the yearly rate of tribal allegiance for governments with the tribal allegiance mechanic.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 197
+	},
+	"<faction>_influence": {
+		"type": "Government",
+		"default_value": 0.1,
+		"description": "Adds to the monthly rate of faction influence. Generated automatically for all factions in /Europa Universalis IV/common/factions.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 198
+	},
+	"imperial_authority": {
+		"type": "Government",
+		"default_value": 0.05,
+		"description": "Modifies the impact of Imperial Authority gains.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 199
+	},
+	"imperial_authority_value": {
+		"type": "Government",
+		"default_value": 0.1,
+		"description": "Adds to the rate of Imperial Authority gained per month.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 200
+	},
+	"imperial_mandate": {
+		"type": "Government",
+		"default_value": 0.1,
+		"description": "Adds to the rate of Mandate gained per month.",
+		"effect_type": "Additive",
+		"description_ko": "천명 변동치",
+		"index": 201
+	},
+	"election_cycle": {
+		"type": "Government",
+		"default_value": 1.0,
+		"description": "Adds to the duration of an election cycle for the current nation. Negative values shorten the duration, positive values add to it.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 202
+	},
+	"candidate_random_bonus": {
+		"type": "Government",
+		"default_value": 1.0,
+		"description": "Adds to the randomized stats a republican candidate may receive during elections.",
+		"effect_type": "Additive",
+		"description_ko": "후보자 능력치 무작위 보너스",
+		"index": 203
+	},
+	"reelection_cost": {
+		"type": "Government",
+		"default_value": -0.1,
+		"description": "Modifies the cost in Republican Tradition when re-electing candidates.",
+		"effect_type": "Multiplicative",
+		"description_ko": "재선출 비용",
+		"index": 204
+	},
+	"reform_progress_growth": {
+		"type": "Government",
+		"default_value": 0.1,
+		"description": "Adds to the rate of government reform progress gain.",
+		"effect_type": "Additive",
+		"description_ko": "개혁 진행도 증가",
+		"index": 205
+	},
+	"culture_conversion_cost": {
+		"type": "Culture",
+		"default_value": -0.25,
+		"description": "Modifies the diplomatic power cost for culture conversion in provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "문화 전환 비용",
+		"index": 206
+	},
+	"num_accepted_cultures": {
+		"type": "Culture",
+		"default_value": 1.0,
+		"description": "Adds to the maximum number of accepted cultures a country can have.",
+		"effect_type": "Additive",
+		"description_ko": "최대 수용 문화 수",
+		"index": 207
+	},
+	"same_culture_advisor_cost": {
+		"type": "Culture",
+		"default_value": -0.5,
+		"description": "Modifies the advisor cost for advisors that share the same culture as the country's court they're in.",
+		"effect_type": "Multiplicative",
+		"description_ko": "통치자 문화의 조언자 비용",
+		"index": 208
+	},
+	"promote_culture_cost": {
+		"type": "Culture",
+		"default_value": -0.25,
+		"description": "Modifies the diplomatic power cost for promoting a culture.",
+		"effect_type": "Multiplicative",
+		"description_ko": "문화 수용 비용",
+		"index": 209
+	},
+	"global_unrest": {
+		"type": "Stability",
+		"default_value": -2.0,
+		"description": "Adds to the base unrest value.",
+		"effect_type": "Additive",
+		"description_ko": "국가 불만도",
+		"index": 210
+	},
+	"stability_cost_modifier": {
+		"type": "Stability",
+		"default_value": -0.1,
+		"description": "Modifies the administrative power cost of raising stability.",
+		"effect_type": "Multiplicative",
+		"description_ko": "안정도 비용 변동치",
+		"index": 211
+	},
+	"global_autonomy": {
+		"type": "Stability",
+		"default_value": -0.05,
+		"description": "Adds to the monthly rate of autonomy in owned provinces.",
+		"effect_type": "Additive",
+		"description_ko": "월별 자치도 변화",
+		"index": 212
+	},
+	"min_autonomy": {
+		"type": "Stability",
+		"default_value": -10.0,
+		"description": "Sets the minimum autonomy level allowed in all owned provinces.",
+		"effect_type": "Constant",
+		"description_ko": "최소 자치도",
+		"index": 213
+	},
+	"autonomy_change_time": {
+		"type": "Stability",
+		"default_value": -0.25,
+		"description": "Modifies the cooldown for the autonomy reduction and increase buttons.",
+		"effect_type": "Multiplicative",
+		"description_ko": "자치도 변화 시간",
+		"index": 214
+	},
+	"harsh_treatment_cost": {
+		"type": "Stability",
+		"default_value": -0.2,
+		"description": "Modifies the military power cost for using harsh treatment.",
+		"effect_type": "Multiplicative",
+		"description_ko": "가혹한 조치 비용",
+		"index": 215
+	},
+	"years_of_nationalism": {
+		"type": "Stability",
+		"default_value": -5.0,
+		"description": "Adds to the base separatism value of provinces when conquered.",
+		"effect_type": "Additive",
+		"description_ko": "분리주의 지속연도",
+		"index": 216
+	},
+	"min_autonomy_in_territories": {
+		"type": "Stability",
+		"default_value": -0.1,
+		"description": "Modifies the minimum autonomy experienced in territories.",
+		"effect_type": "Multiplicative",
+		"description_ko": "준주 최소 자치도",
+		"index": 217
+	},
+	"liberty_desire": {
+		"type": "Subject",
+		"default_value": -10.0,
+		"description": "Adds to subject liberty desire against their overlord.",
+		"effect_type": "Additive",
+		"description_ko": "독립 열망",
+		"index": 218
+	},
+	"liberty_desire_from_subject_development": {
+		"type": "Subject",
+		"default_value": -0.25,
+		"description": "Adds to the subject liberty desire from development against their overlord.",
+		"effect_type": "Multiplicative",
+		"description_ko": "속국 개발도에 의한 독립 열망",
+		"index": 219
+	},
+	"reduced_liberty_desire": {
+		"type": "Subject",
+		"default_value": 10.0,
+		"description": "Adds to the liberty desire subjects have against their overlord. Applied to the overlord.",
+		"effect_type": "Additive",
+		"description_ko": "독립 열망 (군주에게 적용)",
+		"index": 220
+	},
+	"reduced_liberty_desire_on_same_continent": {
+		"type": "Subject",
+		"default_value": 10.0,
+		"description": "Adds to the liberty desire subjects have against their overlord if on the same continent. Applied to the overlord.",
+		"effect_type": "Additive",
+		"description_ko": "같은 대륙의 종속국들의 독립 열망 (군주에게 적용)",
+		"index": 221
+	},
+	"spy_offence": {
+		"type": "Espionage",
+		"default_value": 0.1,
+		"description": "Modifies the base effectiveness of spies against enemies.",
+		"effect_type": "Multiplicative",
+		"description_ko": "첩보망 구축",
+		"index": 222
+	},
+	"global_spy_defence": {
+		"type": "Espionage",
+		"default_value": 0.1,
+		"description": "Modifies the base effectiveness of counter-espionage against enemy spies.",
+		"effect_type": "Multiplicative",
+		"description_ko": "외국 첩보 탐지",
+		"index": 223
+	},
+	"discovered_relations_impact": {
+		"type": "Espionage",
+		"default_value": -0.1,
+		"description": "Modifies the relations impact applied to a country when discovered committing an espionage action.",
+		"effect_type": "Multiplicative",
+		"description_ko": "첩보 활동으로 인한 관계도 효과",
+		"index": 224
+	},
+	"rebel_support_efficiency": {
+		"type": "Espionage",
+		"default_value": 0.5,
+		"description": "Modifies the effectiveness of supported rebels in other countries.",
+		"effect_type": "Multiplicative",
+		"description_ko": "반란군 지원 효율",
+		"index": 225
+	},
+	"global_missionary_strength": {
+		"type": "Religion",
+		"default_value": 0.03,
+		"description": "Adds to the base missionary strength against all religions.",
+		"effect_type": "Additive",
+		"description_ko": "선교 능력",
+		"index": 226
+	},
+	"global_heretic_missionary_strength": {
+		"type": "Religion",
+		"default_value": 0.03,
+		"description": "Adds to the base missionary strength against heretic religions.",
+		"effect_type": "Additive",
+		"description_ko": "이단에 대한 선교 능력",
+		"index": 227
+	},
+	"missionaries": {
+		"type": "Religion",
+		"default_value": 1.0,
+		"description": "Adds to the base missionary count for a country.",
+		"effect_type": "Additive",
+		"description_ko": "선교사",
+		"index": 228
+	},
+	"missionary_maintenance_cost": {
+		"type": "Religion",
+		"default_value": -0.1,
+		"description": "Modifies the cost of missionary maintenance whilst converting provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 229
+	},
+	"religious_unity": {
+		"type": "Religion",
+		"default_value": 0.5,
+		"description": "Adds to the base religious unity value for a country.",
+		"effect_type": "Additive",
+		"description_ko": "종교 통일성",
+		"index": 230
+	},
+	"tolerance_own": {
+		"type": "Religion",
+		"default_value": 1.0,
+		"description": "Adds to the base tolerance for the true faith within a country.",
+		"effect_type": "Additive",
+		"description_ko": "참된 신앙에 대한 관용도",
+		"index": 231
+	},
+	"tolerance_heretic": {
+		"type": "Religion",
+		"default_value": 1.0,
+		"description": "Adds to the base tolerance for heretics within a country.",
+		"effect_type": "Additive",
+		"description_ko": "이단에 대한 관용도",
+		"index": 232
+	},
+	"tolerance_heathen": {
+		"type": "Religion",
+		"default_value": 1.0,
+		"description": "Adds to the base tolerance for heathens within a country.",
+		"effect_type": "Additive",
+		"description_ko": "이교에 대한 관용도",
+		"index": 233
+	},
+	"papal_influence": {
+		"type": "Religion",
+		"default_value": 0.5,
+		"description": "Adds to the rate of papal influence gained per year.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 234
+	},
+	"church_power_modifier": {
+		"type": "Religion",
+		"default_value": 0.5,
+		"description": "Modifies the effectiveness of church power gains.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 235
+	},
+	"monthly_fervor_increase": {
+		"type": "Religion",
+		"default_value": 1.0,
+		"description": "Adds to the rate of fervor gained per month.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 236
+	},
+	"harmonization_speed": {
+		"type": "Religion",
+		"default_value": 0.2,
+		"description": "Modifies the rate at which harmonization occurs.",
+		"effect_type": "Multiplicative",
+		"description_ko": "종교 조화 속도",
+		"index": 237
+	},
+	"yearly_harmony": {
+		"type": "Religion",
+		"default_value": 1.0,
+		"description": "Adds to the rate of harmony gained per year.",
+		"effect_type": "Additive",
+		"description_ko": "연간 조화 증가량",
+		"index": 238
+	},
+	"monthly_piety": {
+		"type": "Religion",
+		"default_value": 0.1,
+		"description": "Adds to the rate of piety gained per month.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 239
+	},
+	"monthly_karma": {
+		"type": "Religion",
+		"default_value": 0.1,
+		"description": "Adds to the rate of karma gained per month.",
+		"effect_type": "Additive",
+		"description_ko": "없음",
+		"index": 240
+	},
+	"enforce_religion_cost": {
+		"type": "Religion",
+		"default_value": -0.5,
+		"description": "Modifies the war score cost for the Enforce Religion peace term.",
+		"effect_type": "Multiplicative",
+		"description_ko": "전쟁을 통한 종교 강요 비용",
+		"index": 241
+	},
+	"prestige_per_development_from_conversion": {
+		"type": "Religion",
+		"default_value": 0.5,
+		"description": "Adds to the prestige bonus gained per development when successfully converting a province to a state religion.",
+		"effect_type": "Additive",
+		"description_ko": "선교로 부터 얻는 개발도 당 위신",
+		"index": 242
+	},
+	"warscore_cost_vs_other_religion": {
+		"type": "Religion",
+		"default_value": -0.25,
+		"description": "Modifies the war score costs for peace terms whilst in war against countries of a different religion.",
+		"effect_type": "Multiplicative",
+		"description_ko": "다른 종교 국가들에 대한 전쟁 점수 비용",
+		"index": 243
+	},
+	"establish_order_cost": {
+		"type": "Religion",
+		"default_value": -0.1,
+		"description": "Modifies the cost for using the Establish Order action.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 244
+	},
+	"colonists": {
+		"type": "Colonisation",
+		"default_value": 1.0,
+		"description": "Modifies the base colonist count for a country.",
+		"effect_type": "Additive",
+		"description_ko": "개척자",
+		"index": 245
+	},
+	"colonist_placement_chance": {
+		"type": "Colonisation",
+		"default_value": 0.05,
+		"description": "Adds to the base colonial placement chance for colonists, which is the chance that additional settlers will be spawned whilst the colonist is present.",
+		"effect_type": "Additive",
+		"description_ko": "정착 가능성",
+		"index": 246
+	},
+	"global_colonial_growth": {
+		"type": "Colonisation",
+		"default_value": 10.0,
+		"description": "Adds to the base yearly colonial growth gain.",
+		"effect_type": "Additive",
+		"description_ko": "세계적 식민지 성장",
+		"index": 247
+	},
+	"range": {
+		"type": "Colonisation",
+		"default_value": 0.5,
+		"description": "Modifies the base colonisation range, used for exploration, colonisation and coring province that border sea.",
+		"effect_type": "Multiplicative",
+		"description_ko": "개척 가능 범위",
+		"index": 248
+	},
+	"native_uprising_chance": {
+		"type": "Colonisation",
+		"default_value": -0.25,
+		"description": "Adds to the chance of native uprisings in a colony province.",
+		"effect_type": "Multiplicative",
+		"description_ko": "원주민 반란 확률",
+		"index": 249
+	},
+	"native_assimilation": {
+		"type": "Colonisation",
+		"default_value": 0.25,
+		"description": "Modifies the bonus from assimilation in colonies. Native assimilation is bonus to goods produced depends on the native population.",
+		"effect_type": "Multiplicative",
+		"description_ko": "원주민 동화",
+		"index": 250
+	},
+	"migration_cooldown": {
+		"type": "Colonisation",
+		"default_value": -0.2,
+		"description": "Modifies the cooldown for the migration action for primitive nations that can migrate.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 251
+	},
+	"global_tariffs": {
+		"type": "Colonisation",
+		"default_value": 0.25,
+		"description": "Modifies the tariff income from colonial nations.",
+		"effect_type": "Multiplicative",
+		"description_ko": "세계 관세",
+		"index": 252
+	},
+	"treasure_fleet_income": {
+		"type": "Colonisation",
+		"default_value": 0.1,
+		"description": "Modifies the income from treasure fleets sent by colonial nations.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 253
+	},
+	"expel_minorities_cost": {
+		"type": "Colonisation",
+		"default_value": -0.1,
+		"description": "Modifies the cost of using the Expel Minorities action.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 254
+	},
+	"caravan_power": {
+		"type": "Trade",
+		"default_value": 0.2,
+		"description": "Modifies the bonus trade power inland nodes receive from trade power sources.",
+		"effect_type": "Multiplicative",
+		"description_ko": "캐러밴 영향력",
+		"index": 255
+	},
+	"merchants": {
+		"type": "Trade",
+		"default_value": 1.0,
+		"description": "Adds to the base merchant count for a country.",
+		"effect_type": "Additive",
+		"description_ko": "상인",
+		"index": 256
+	},
+	"placed_merchant_power": {
+		"type": "Trade",
+		"default_value": 3.0,
+		"description": "Modifies the additional trade power when a merchant present in a trade node.",
+		"effect_type": "Additive",
+		"description_ko": "상인 무역력",
+		"index": 257
+	},
+	"global_trade_power": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the trade power in all trade nodes for a country.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국가 무역력",
+		"index": 258
+	},
+	"global_foreign_trade_power": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the trade power for a country in trade nodes that are not domestic.",
+		"effect_type": "Multiplicative",
+		"description_ko": "해외 무역력",
+		"index": 259
+	},
+	"global_own_trade_power": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the trade power for a country in trade nodes that are domestic.",
+		"effect_type": "Multiplicative",
+		"description_ko": "국내 무역력",
+		"index": 260
+	},
+	"global_prov_trade_power_modifier": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the base trade power of owned provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "지역 무역력 변동치",
+		"index": 261
+	},
+	"global_trade_goods_size_modifier": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the base trade good size of owned provinces.",
+		"effect_type": "Multiplicative",
+		"description_ko": "제품 생산 변동치",
+		"index": 262
+	},
+	"trade_efficiency": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies a country's trade income. (Maximum is 200%)",
+		"effect_type": "Multiplicative",
+		"description_ko": "무역 효율",
+		"index": 263
+	},
+	"trade_range_modifier": {
+		"type": "Trade",
+		"default_value": 0.25,
+		"description": "Modifies the trade range used to determine if a country can place a merchant in a trade node.",
+		"effect_type": "Multiplicative",
+		"description_ko": "무역 범위",
+		"index": 264
+	},
+	"trade_steering": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the bonus to trade power used for steering when determining which outgoing node trade is steered to. If you have a merchant present, it also slightly increases the outgoing value.",
+		"effect_type": "Multiplicative",
+		"description_ko": "무역 조정",
+		"index": 265
+	},
+	"global_ship_trade_power": {
+		"type": "Trade",
+		"default_value": 0.2,
+		"description": "Modifies the trade power ships grant when protecting trade.",
+		"effect_type": "Multiplicative",
+		"description_ko": "선박 무역력",
+		"index": 266
+	},
+	"privateer_efficiency": {
+		"type": "Trade",
+		"default_value": 0.2,
+		"description": "Modifies the effectiveness of privateers in a trade node.",
+		"effect_type": "Multiplicative",
+		"description_ko": "사략임무 효율",
+		"index": 267
+	},
+	"embargo_efficiency": {
+		"type": "Trade",
+		"default_value": 0.25,
+		"description": "Modifies the effectiveness of embargoing another country.",
+		"effect_type": "Multiplicative",
+		"description_ko": "무역 금지령 효율",
+		"index": 268
+	},
+	"ship_power_propagation": {
+		"type": "Trade",
+		"default_value": 0.1,
+		"description": "Modifies the propagation of trade power from ships protecting trade.",
+		"effect_type": "Multiplicative",
+		"description_ko": "선박 무역력 전파",
+		"index": 269
+	},
+	"center_of_trade_upgrade_cost": {
+		"type": "Trade",
+		"default_value": -0.1,
+		"description": "Modifies the cost of upgrading a Center of Trade in a province.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 270
+	},
+	"trade_company_investment_cost": {
+		"type": "Trade",
+		"default_value": -0.1,
+		"description": "Modifies the cost of purchasing a Trade Company investment in a state.",
+		"effect_type": "Multiplicative",
+		"description_ko": "없음",
+		"index": 271
+	}
+}
