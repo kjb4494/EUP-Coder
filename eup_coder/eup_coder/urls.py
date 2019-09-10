@@ -21,6 +21,7 @@ urlpatterns = [
     # HTML Page
     path('', views.index, name='home'),
     path('code-builder/', views.code_builder, name='code-builder'),
+    path('code-builder/refresh/', views.refresh_cache, name='refresh-cache'),
 
 
     # 인증
@@ -28,6 +29,7 @@ urlpatterns = [
     path('auth/logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     # API
-    path('code-builder-json/', views.code_builder_json, name='code-builder-json'),
-    path('refresh-cache/', views.refresh_cache, name='refresh-cache')
+    path('api/v1/modifier-info/', views.code_builder_json, name='code-builder-json'),
+    path('api/v1/modifier-info/increase-value/', views.increase_value, name='increase-value'),
+    path('api/v1/modifier-info/decrease-value/', views.decrease_value, name='decrease-value')
 ]

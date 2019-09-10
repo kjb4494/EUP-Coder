@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
@@ -56,6 +56,12 @@ def code_builder(request):
     return render(request, 'code-builder.html')
 
 
+@requires_login
+def refresh_cache(request):
+    cache.delete('md5_checksum')
+    return redirect(code_builder)
+
+
 @auth_req_api
 def code_builder_json(request):
     db_modifier_info = TbModifierSettingsInfo.objects.filter(~Q(description_ko='없음'))
@@ -66,6 +72,20 @@ def code_builder_json(request):
 @require_POST
 @csrf_exempt
 @auth_req_api
-def refresh_cache(request):
-    cache.delete('md5_checksum')
-    return ok_message('cache refresh success.')
+def decrease_value(request):
+    subno = request.POST.get('subno')
+    ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
+    ob_modifier_info.current_value -= ob_modifier_info.default_value
+    ob_modifier_info.save()
+    return ok_message('update success.')
+
+
+@require_POST
+@csrf_exempt
+@auth_req_api
+def increase_value(request):
+    subno = request.POST.get('subno')
+    ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
+    ob_modifier_info.current_value += ob_modifier_info.default_value
+    ob_modifier_info.save()
+    return ok_message('update success.')

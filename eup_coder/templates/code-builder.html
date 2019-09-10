@@ -21,7 +21,7 @@
 {% endblock page-title %}
 
 {% block page-title-actions %}
-  <button class="btn-shadow mr-3 btn btn-dark" id="cache-refresh-button">초기화</button>
+  <button class="btn-shadow mr-3 btn btn-dark" onclick="location.href='{% url 'refresh-cache' %}'">초기화</button>
 {% endblock page-title-actions %}
 
 {% block page-content %}
@@ -70,7 +70,12 @@
         {data: 'fields.modifier_type'},
         {data: 'fields.effect_type'},
         {data: 'fields.default_value'},
-        {data: 'fields.current_value'},
+        {
+          data: 'fields.current_value',
+          render: function ( data, type, row ) {
+            return data.toFixed(2);
+          }
+        },
         {
           data: null,
           defaultContent: '<i class="pe-7s-angle-right increase-arrow" name="up-button"></i>',
@@ -81,32 +86,31 @@
     });
 
     $('#code-builder-table tbody').on('click', 'i[name="down-button"]', function () {
-      const td = $(this).parents('tr').children();
-      const default_value_index = 5;
-      const current_value_index = 6;
-
-      let default_value = td.eq(default_value_index).html();
-      let current_value = td.eq(current_value_index).html();
-
-      td.eq(current_value_index).html(current_value - default_value);
-
+        var data = table.row( $(this).parents('tr') ).data();
+        var dataString = 'subno=' + data.pk;
+        console.log(dataString);
       $.ajax({
         type: "POST",
-        url: "",
-        data: 'test=test',
+        url: "{% url 'decrease-value' %}",
+        data: dataString,
         success: function() {
-          //display message back to user here
+          table.ajax.reload( null, false );
         }
       });
     });
 
-    $('#cache-refresh-button').click(function () {
+    $('#code-builder-table tbody').on('click', 'i[name="up-button"]', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        var dataString = 'subno=' + data.pk;
+        console.log(dataString);
       $.ajax({
         type: "POST",
-        url: "{% url 'refresh-cache' %}"
+        url: "{% url 'increase-value' %}",
+        data: dataString,
+        success: function() {
+          table.ajax.reload( null, false );
+        }
       });
-      table.ajax.reload( null, false );
     });
-
   </script>
 {% endblock js %}
