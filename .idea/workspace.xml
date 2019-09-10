@@ -4,7 +4,6 @@
     <list default="true" id="f86de23c-5dc0-4ab8-b5e1-d4a104bae65a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eup_coder/backend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/eup_coder/backend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eup_coder/eup_coder/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/eup_coder/eup_coder/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eup_coder/templates/code-builder.html" beforeDir="false" afterPath="$PROJECT_DIR$/eup_coder/templates/code-builder.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,14 +51,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eup_coder/backend/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+            <state relative-caret-position="1035">
+              <caret line="69" column="32" lean-forward="true" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eup_coder/backend/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eup_coder/templates/code-builder.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="114" selection-start-line="35" selection-start-column="114" selection-end-line="35" selection-end-column="114" />
+              <folding>
+                <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#431#437#0#HTML" expanded="true" />
+                <element signature="e#437#443#0#HTML" expanded="true" />
+                <element signature="e#443#449#0#HTML" expanded="true" />
+                <element signature="e#449#455#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eup_coder/eup_coder/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -113,13 +147,13 @@
         <option value="$PROJECT_DIR$/eup_coder/templates/errorPages/403.html" />
         <option value="$PROJECT_DIR$/eup_coder/templates/base.html" />
         <option value="$PROJECT_DIR$/eup_coder/templates/index.html" />
-        <option value="$PROJECT_DIR$/eup_coder/backend/models.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/eup_coder/eup_coder/settings.py" />
         <option value="$PROJECT_DIR$/eup_coder/modifier-info.json" />
         <option value="$PROJECT_DIR$/eup_coder/backend/json_response_helper.py" />
         <option value="$PROJECT_DIR$/eup_coder/backend/decorators.py" />
         <option value="$PROJECT_DIR$/eup_coder/eup_coder/urls.py" />
+        <option value="$PROJECT_DIR$/eup_coder/backend/models.py" />
         <option value="$PROJECT_DIR$/eup_coder/backend/views.py" />
         <option value="$PROJECT_DIR$/eup_coder/templates/code-builder.html" />
       </list>
@@ -242,7 +276,7 @@
       <workItem from="1567992940201" duration="20419000" />
       <workItem from="1568076030652" duration="4761000" />
       <workItem from="1568084409418" duration="4864000" />
-      <workItem from="1568098087791" duration="4861000" />
+      <workItem from="1568098087791" duration="8839000" />
     </task>
     <task id="LOCAL-00001" summary="템플릿 완성">
       <created>1568000224420</created>
@@ -265,11 +299,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568095138767</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="No Refresh Modifier 기능 구현 완료">
+      <created>1568103407302</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568103407302</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34905000" />
+    <option name="totallyTimeSpent" value="38883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="509" y="23" width="1411" height="958" extended-state="0" />
@@ -424,27 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eup_coder/eup_coder/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eup_coder/templates/code-builder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="109" column="12" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eup_coder/backend/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eup_coder/backend/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -462,12 +482,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/backend/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eup_coder/backend/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        <state relative-caret-position="1035">
+          <caret line="69" column="32" lean-forward="true" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/eup_coder/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/templates/code-builder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="114" selection-start-line="35" selection-start-column="114" selection-end-line="35" selection-end-column="114" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#431#437#0#HTML" expanded="true" />
+            <element signature="e#437#443#0#HTML" expanded="true" />
+            <element signature="e#443#449#0#HTML" expanded="true" />
+            <element signature="e#449#455#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

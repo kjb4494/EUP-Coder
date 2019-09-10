@@ -53,7 +53,16 @@ def code_builder(request):
 
         cache.set('md5_checksum', md5_checksum, None)
 
-    return render(request, 'code-builder.html')
+    # Sidebar 출력 데이터 산출
+    code_data = []
+    db_modifier_info = TbModifierSettingsInfo.objects.filter(~Q(current_value=0))
+    for data in db_modifier_info:
+        code_data.append({
+            'codename': data.modifier_name,
+            'value': data.current_value
+        })
+    res = {'code_generator': code_data}
+    return render(request, 'code-builder.html', res)
 
 
 @requires_login
@@ -75,7 +84,7 @@ def code_builder_json(request):
 def decrease_value(request):
     subno = request.POST.get('subno')
     ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
-    ob_modifier_info.current_value -= ob_modifier_info.default_value
+    ob_modifier_info.current_value = round(ob_modifier_info.current_value - ob_modifier_info.default_value, 2)
     ob_modifier_info.save()
     return ok_message('update success.')
 
@@ -86,6 +95,6 @@ def decrease_value(request):
 def increase_value(request):
     subno = request.POST.get('subno')
     ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
-    ob_modifier_info.current_value += ob_modifier_info.default_value
+    ob_modifier_info.current_value = round(ob_modifier_info.current_value + ob_modifier_info.default_value, 2)
     ob_modifier_info.save()
     return ok_message('update success.')

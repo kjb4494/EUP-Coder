@@ -11,6 +11,18 @@
 {% endblock css %}
 
 {% block sidebar-content %}
+  <h3 style="text-align: center; padding: 10px; cursor: pointer; color: #003366">
+    <span onclick="CopyToClipboard('result-code')">Click here to result copy!</span>
+  </h3>
+  <div class="main-card mb-3 card" style="margin: 20px">
+    <div class="card-body" id="result-code">
+      modified_code = {<br>
+        {% for code in code_generator %}
+          &nbsp;&nbsp;&nbsp;&nbsp;{{ code.codename }} = {{ code.value }}<br>
+        {% endfor %}
+      }
+    </div>
+  </div>
 {% endblock sidebar-content %}
 
 {% block page-title %}
@@ -21,6 +33,7 @@
 {% endblock page-title %}
 
 {% block page-title-actions %}
+  <button class="btn-shadow mr-3 btn btn-success" onclick="location.href='{% url 'code-builder' %}'">빌드하기</button>
   <button class="btn-shadow mr-3 btn btn-dark" onclick="location.href='{% url 'refresh-cache' %}'">초기화</button>
 {% endblock page-title-actions %}
 
@@ -70,12 +83,7 @@
         {data: 'fields.modifier_type'},
         {data: 'fields.effect_type'},
         {data: 'fields.default_value'},
-        {
-          data: 'fields.current_value',
-          render: function ( data, type, row ) {
-            return data.toFixed(2);
-          }
-        },
+        {data: 'fields.current_value'},
         {
           data: null,
           defaultContent: '<i class="pe-7s-angle-right increase-arrow" name="up-button"></i>',
@@ -112,5 +120,21 @@
         }
       });
     });
+  </script>
+  <script>
+    function CopyToClipboard(containerid) {
+      if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("copy");
+
+      } else if (window.getSelection) {
+        var range = document.createRange();
+         range.selectNode(document.getElementById(containerid));
+         window.getSelection().addRange(range);
+         document.execCommand("copy");
+         window.getSelection().removeAllRanges();
+      }}
   </script>
 {% endblock js %}
