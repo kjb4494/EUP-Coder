@@ -3,6 +3,11 @@
 
 {% block css %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.min.css' %}"/>
+  <style>
+    .increase-arrow{
+      cursor: pointer;
+    }
+  </style>
 {% endblock css %}
 
 {% block sidebar-content %}
@@ -16,7 +21,7 @@
 {% endblock page-title %}
 
 {% block page-title-actions %}
-  <button class="btn-shadow mr-3 btn btn-dark">상태 저장하기</button>
+  <button class="btn-shadow mr-3 btn btn-dark" id="cache-refresh-button">초기화</button>
 {% endblock page-title-actions %}
 
 {% block page-content %}
@@ -25,16 +30,17 @@
       <table class="mb-0 table table-striped table-hover" id="code-builder-table" style="width: 100%">
         <thead>
           <tr>
+            <th></th>
             <th>일련번호</th>
             <th>특성</th>
             <th>종류</th>
             <th>적용방식</th>
             <th>기본값</th>
             <th>변경값</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>
-        </tbody>
+
       </table>
     </div>
   </div>
@@ -53,13 +59,54 @@
         "dataSrc": "",
       },
       "columns": [
-          {data: 'pk'},
-          {data: 'fields.description_ko'},
-          {data: 'fields.modifier_type'},
-          {data: 'fields.effect_type'},
-          {data: 'fields.default_value'},
-          {data: 'fields.current_value'}
+        {
+          data: null,
+          defaultContent: '<i class="pe-7s-angle-left increase-arrow" name="down-button"></i>',
+          orderable: false,
+          searchable: false
+        },
+        {data: 'pk'},
+        {data: 'fields.description_ko'},
+        {data: 'fields.modifier_type'},
+        {data: 'fields.effect_type'},
+        {data: 'fields.default_value'},
+        {data: 'fields.current_value'},
+        {
+          data: null,
+          defaultContent: '<i class="pe-7s-angle-right increase-arrow" name="up-button"></i>',
+          orderable: false,
+          searchable: false
+        }
       ]
     });
+
+    $('#code-builder-table tbody').on('click', 'i[name="down-button"]', function () {
+      const td = $(this).parents('tr').children();
+      const default_value_index = 5;
+      const current_value_index = 6;
+
+      let default_value = td.eq(default_value_index).html();
+      let current_value = td.eq(current_value_index).html();
+
+      td.eq(current_value_index).html(current_value - default_value);
+
+      $.ajax({
+        type: "POST",
+        url: "",
+        data: 'test=test',
+        success: function() {
+          //display message back to user here
+        }
+      });
+    });
+
+    $('#cache-refresh-button').click(function () {
+      $.ajax({
+        type: "POST",
+        url: "{% url 'refresh-cache' %}"
+      });
+      table.ajax.reload( null, false );
+    });
+
   </script>
 {% endblock js %}
