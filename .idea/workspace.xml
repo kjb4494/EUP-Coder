@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f86de23c-5dc0-4ab8-b5e1-d4a104bae65a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/js/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eup_coder/static/js/clipboard.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eup_coder/backend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/eup_coder/backend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eup_coder/templates/code-builder.html" beforeDir="false" afterPath="$PROJECT_DIR$/eup_coder/templates/code-builder.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eup_coder/templates/code-builder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="114" selection-start-line="35" selection-start-column="114" selection-end-line="35" selection-end-column="114" />
+            <state relative-caret-position="669">
+              <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -205,6 +206,21 @@
               <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
               <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
               <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="clipboard.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="EUP-Coder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EUP-Coder" type="462c0819:PsiDirectoryNode" />
+              <item name="eup_coder" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -232,23 +248,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/eup_coder/static/jquery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/eup_coder/static/js" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eup_coder/static/js" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/jquery" />
+      <recent name="$PROJECT_DIR$/eup_coder/templates" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/css" />
+      <recent name="$PROJECT_DIR$/eup_coder/static/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/eup_coder/static/js" />
       <recent name="$PROJECT_DIR$/eup_coder" />
       <recent name="$PROJECT_DIR$/eup_coder/static/css/assets/images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/eup_coder/static/jquery" />
-      <recent name="$PROJECT_DIR$/eup_coder/templates" />
-      <recent name="$PROJECT_DIR$/eup_coder/static/js" />
-      <recent name="$PROJECT_DIR$/eup_coder/static/css" />
-      <recent name="$PROJECT_DIR$/eup_coder/static/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -276,7 +292,7 @@
       <workItem from="1567992940201" duration="20419000" />
       <workItem from="1568076030652" duration="4761000" />
       <workItem from="1568084409418" duration="4864000" />
-      <workItem from="1568098087791" duration="8839000" />
+      <workItem from="1568098087791" duration="10388000" />
     </task>
     <task id="LOCAL-00001" summary="템플릿 완성">
       <created>1568000224420</created>
@@ -306,17 +322,24 @@
       <option name="project" value="LOCAL" />
       <updated>1568103407302</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="기능구현 끝">
+      <created>1568107905932</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568107905932</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38883000" />
+    <option name="totallyTimeSpent" value="40432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="509" y="23" width="1411" height="958" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2147553" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2147553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -331,7 +354,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3290993" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.3290993" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -347,7 +370,8 @@
     <MESSAGE value="템플릿 완성" />
     <MESSAGE value="테이블 프레임까지 완성" />
     <MESSAGE value="No Refresh Modifier 기능 구현 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="No Refresh Modifier 기능 구현 완료" />
+    <MESSAGE value="기능구현 끝" />
+    <option name="LAST_COMMIT_MESSAGE" value="기능구현 끝" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/eup_coder/static/css/assets/images/avatars/logo.png" />
@@ -506,10 +530,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eup_coder/static/js/clipboard.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/eup_coder/templates/code-builder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="114" selection-start-line="35" selection-start-column="114" selection-end-line="35" selection-end-column="114" />
+        <state relative-caret-position="669">
+          <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />

@@ -12,7 +12,7 @@
 
 {% block sidebar-content %}
   <h3 style="text-align: center; padding: 10px; cursor: pointer; color: #003366">
-    <span onclick="CopyToClipboard('result-code')">Click here to result copy!</span>
+    <span id="copy-button" data-clipboard-target="#result-code">Click here to result copy!</span>
   </h3>
   <div class="main-card mb-3 card" style="margin: 20px">
     <div class="card-body" id="result-code">
@@ -60,6 +60,7 @@
 {% endblock page-content %}
 
 {% block js %}
+  <script type="text/javascript" src="{% static 'js/clipboard.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/datatables.min.js' %}"></script>
   <script type="text/javascript">
@@ -122,19 +123,12 @@
     });
   </script>
   <script>
-    function CopyToClipboard(containerid) {
-      if (document.selection) {
-        var range = document.body.createTextRange();
-        range.moveToElementText(document.getElementById(containerid));
-        range.select().createTextRange();
-        document.execCommand("copy");
+    var clipboard = new ClipboardJS('#copy-button');
+    clipboard.on('success', function(e) {
+      e.clearSelection();
+    });
 
-      } else if (window.getSelection) {
-        var range = document.createRange();
-         range.selectNode(document.getElementById(containerid));
-         window.getSelection().addRange(range);
-         document.execCommand("copy");
-         window.getSelection().removeAllRanges();
-      }}
+    clipboard.on('error', function(e) {
+    });
   </script>
 {% endblock js %}
