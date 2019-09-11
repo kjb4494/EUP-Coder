@@ -52,6 +52,7 @@ def code_builder(request):
         TbModifierSettingsInfo.objects.bulk_create(bulk_list)
 
         cache.set('md5_checksum', md5_checksum, None)
+        cache.set('point', settings.POINT, None)
 
     # Sidebar 출력 데이터 산출
     code_data = []
@@ -61,7 +62,10 @@ def code_builder(request):
             'codename': data.modifier_name,
             'value': data.current_value
         })
-    res = {'code_generator': code_data}
+    res = {
+        'code_generator': code_data,
+        'point': cache.get('point')
+    }
     return render(request, 'code-builder.html', res)
 
 
@@ -86,7 +90,9 @@ def decrease_value(request):
     ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
     ob_modifier_info.current_value = round(ob_modifier_info.current_value - ob_modifier_info.default_value, 2)
     ob_modifier_info.save()
-    return ok_message('update success.')
+    next_point = cache.get('point') + 1
+    cache.set('point', next_point, None)
+    return ok_message(next_point)
 
 
 @require_POST
@@ -97,4 +103,6 @@ def increase_value(request):
     ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
     ob_modifier_info.current_value = round(ob_modifier_info.current_value + ob_modifier_info.default_value, 2)
     ob_modifier_info.save()
-    return ok_message('update success.')
+    next_point = cache.get('point') - 1
+    cache.set('point', next_point, None)
+    return ok_message(next_point)

@@ -79,6 +79,7 @@
 {% endblock page-title %}
 
 {% block header-actions %}
+  <button class="btn-shadow mr-3 btn disabled" id="remind-point">Point: {{ point }}</button>
   <button class="btn-shadow mr-3 btn btn-success" onclick="location.href='{% url 'code-builder' %}'">빌드하기</button>
   <button class="btn-shadow mr-3 btn btn-dark" onclick="location.href='{% url 'refresh-cache' %}'">초기화</button>
 {% endblock header-actions %}
@@ -139,13 +140,13 @@
     $('#code-builder-table tbody').on('click', 'i[name="down-button"]', function () {
         var data = table.row( $(this).parents('tr') ).data();
         var dataString = 'subno=' + data.pk;
-        console.log(dataString);
       $.ajax({
         type: "POST",
         url: "{% url 'decrease-value' %}",
         data: dataString,
-        success: function() {
+        success: function(args) {
           table.ajax.reload( null, false );
+          document.getElementById('remind-point').innerHTML = 'Point: ' + args.message;
         }
       });
     });
@@ -153,13 +154,13 @@
     $('#code-builder-table tbody').on('click', 'i[name="up-button"]', function () {
         var data = table.row( $(this).parents('tr') ).data();
         var dataString = 'subno=' + data.pk;
-        console.log(dataString);
       $.ajax({
         type: "POST",
         url: "{% url 'increase-value' %}",
         data: dataString,
-        success: function() {
+        success: function(args) {
           table.ajax.reload( null, false );
+          document.getElementById('remind-point').innerHTML = 'Point: ' + args.message;
         }
       });
     });
