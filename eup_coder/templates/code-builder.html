@@ -3,9 +3,32 @@
 
 {% block css %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.min.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/tooltip.css' %}"/>
   <style>
     .increase-arrow{
       cursor: pointer;
+      font-size: 20px;
+    }
+
+    #code-builder-table th {
+      background-color: #ffffcc;
+      overflow:hidden;
+      white-space : nowrap;
+      text-overflow: ellipsis;
+	  }
+
+    #code-builder-table td {
+      overflow:hidden;
+      white-space : nowrap;
+      text-overflow: ellipsis;
+	  }
+
+    .value-controller tr {
+      background: none !important;
+    }
+
+    .value-controller td {
+      border: none;
     }
   </style>
 {% endblock css %}
@@ -38,25 +61,19 @@
 {% endblock page-title-actions %}
 
 {% block page-content %}
-  <div class="main-card mb-3 card">
-    <div class="card-body">
-      <table class="mb-0 table table-striped table-hover" id="code-builder-table" style="width: 100%">
+    <div style="margin-bottom: 20px">
+      <table class="table table-hover" id="code-builder-table" style="width: 100%">
         <thead>
           <tr>
-            <th></th>
             <th>일련번호</th>
             <th>특성</th>
-            <th>종류</th>
-            <th>적용방식</th>
+            <th>종류 / 적용방식</th>
             <th>기본값</th>
-            <th>변경값</th>
-            <th></th>
+            <th>코드값 조정</th>
           </tr>
         </thead>
-
       </table>
     </div>
-  </div>
 {% endblock page-content %}
 
 {% block js %}
@@ -73,23 +90,25 @@
         "dataSrc": "",
       },
       "columns": [
-        {
-          data: null,
-          defaultContent: '<i class="pe-7s-angle-left increase-arrow" name="down-button"></i>',
-          orderable: false,
-          searchable: false
-        },
         {data: 'pk'},
         {data: 'fields.description_ko'},
-        {data: 'fields.modifier_type'},
-        {data: 'fields.effect_type'},
-        {data: 'fields.default_value'},
-        {data: 'fields.current_value'},
         {
-          data: null,
-          defaultContent: '<i class="pe-7s-angle-right increase-arrow" name="up-button"></i>',
-          orderable: false,
-          searchable: false
+            data: 'fields',
+            render: function ( data, type, row ) {
+                return data.modifier_type + ' / ' + data.effect_type
+            }
+        },
+        {data: 'fields.default_value'},
+        {
+          data: 'fields',
+          render: function ( data, type, row ) {
+            var res_string = '<table class="value-controller" style="width: 100%;"><tr>' +
+                '<td style="width: 20%;"><i class="pe-7s-angle-left increase-arrow" name="down-button"></i></td>' +
+                '<td style="width: 60%; text-align: center">' + data.current_value + '</td>' +
+                '<td style="width: 20%;"><i class="pe-7s-angle-right increase-arrow" name="up-button"></i></td>' +
+                '</tr></table>';
+            return res_string;
+          }
         }
       ]
     });
@@ -123,9 +142,19 @@
     });
   </script>
   <script>
+    $(document).on("mouseleave", "#copy-button", function(e) {
+      $(this).removeClass("tooltipped tooltipped-s").removeAttr("aria-label");
+    });
+
+    function showTooltip(elem, msg) {
+      elem.setAttribute('class','copy tooltipped tooltipped-s');
+      elem.setAttribute('aria-label', msg);
+    }
+
     var clipboard = new ClipboardJS('#copy-button');
     clipboard.on('success', function(e) {
       e.clearSelection();
+      showTooltip(e.trigger,'Copied!');
     });
 
     clipboard.on('error', function(e) {
