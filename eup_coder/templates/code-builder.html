@@ -78,10 +78,10 @@
   <div>Code Builder</div>
 {% endblock page-title %}
 
-{% block page-title-actions %}
+{% block header-actions %}
   <button class="btn-shadow mr-3 btn btn-success" onclick="location.href='{% url 'code-builder' %}'">빌드하기</button>
   <button class="btn-shadow mr-3 btn btn-dark" onclick="location.href='{% url 'refresh-cache' %}'">초기화</button>
-{% endblock page-title-actions %}
+{% endblock header-actions %}
 
 {% block page-content %}
     <div style="margin-bottom: 20px">
@@ -92,7 +92,7 @@
             <th>특성</th>
             <th>종류 / 적용방식</th>
             <th>기본값</th>
-            <th style="text-align: center">코드값 조정</th>
+            <th style="text-align: center">코드값</th>
           </tr>
         </thead>
       </table>
