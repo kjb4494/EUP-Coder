@@ -10,14 +10,37 @@
       font-size: 20px;
     }
 
-    #code-builder-table th {
-      background-color: #ffffcc;
-      overflow:hidden;
-      white-space : nowrap;
-      text-overflow: ellipsis;
-	  }
+    #code-builder-table {
+      border-collapse: collapse;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    #code-builder-table thead th {
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      color: #369;
+      border-bottom: 3px solid #036;
+    }
+
+    #code-builder-table tbody th {
+      width: 150px;
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+      background: #f3f6f7;
+    }
 
     #code-builder-table td {
+      width: 350px;
+      padding: 10px;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #code-builder-table th, #code-builder-table td {
       overflow:hidden;
       white-space : nowrap;
       text-overflow: ellipsis;
@@ -28,7 +51,7 @@
     }
 
     .value-controller td {
-      border: none;
+      border: none !important;
     }
   </style>
 {% endblock css %}
@@ -69,7 +92,7 @@
             <th>특성</th>
             <th>종류 / 적용방식</th>
             <th>기본값</th>
-            <th>코드값 조정</th>
+            <th style="text-align: center">코드값 조정</th>
           </tr>
         </thead>
       </table>

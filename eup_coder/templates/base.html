@@ -51,6 +51,10 @@
             <div class="widget-content p-0">
               <div class="widget-content-wrapper">
                 <div class="widget-content-left">
+
+                  {% block page-title-actions %}
+                  {% endblock page-title-actions %}
+
                   {% if user.is_authenticated %}
                     <div class="btn-group">
                       <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
@@ -147,12 +151,6 @@
 
                 {% block page-title %}
                 {% endblock page-title %}
-
-              </div>
-              <div class="page-title-actions">
-
-                {% block page-title-actions %}
-                {% endblock page-title-actions %}
 
               </div>
             </div>
