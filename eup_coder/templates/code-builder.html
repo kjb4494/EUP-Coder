@@ -56,20 +56,34 @@
   </style>
 {% endblock css %}
 
-{% block sidebar-content %}
-  <h3 style="text-align: center; padding: 10px; cursor: pointer; color: #003366">
-    <span id="copy-button" data-clipboard-target="#result-code">Click here to result copy!</span>
-  </h3>
-  <div class="main-card mb-3 card" style="margin: 20px">
-    <div class="card-body" id="result-code">
-      modified_code = {<br>
-        {% for code in code_generator %}
-          &nbsp;&nbsp;&nbsp;&nbsp;{{ code.codename }} = {{ code.value }}<br>
-        {% endfor %}
-      }
+{% block tooltip %}
+  <div class="ui-theme-settings">
+    <button type="button" id="code-tooltip" class="btn-open-options btn btn-warning">
+      <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+    </button>
+    <div class="theme-settings__inner">
+      <div class="scrollbar-container">
+        <div class="theme-settings__options-wrapper">
+
+          <h3 style="text-align: center; padding: 10px; cursor: pointer; color: #003366">
+            <span id="copy-button" data-clipboard-target="#result-code">Click here to result copy!</span>
+          </h3>
+          <div class="main-card mb-3 card" style="margin: 20px">
+            <div class="card-body" id="result-code">
+              modified_code = {<br>
+                {% for code in code_generator %}
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{ code.codename }} = {{ code.value }}<br>
+                {% endfor %}
+              }
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-{% endblock sidebar-content %}
+
+{% endblock tooltip %}
 
 {% block page-title %}
   <div class="page-title-icon">
@@ -92,8 +106,10 @@
             <th>일련번호</th>
             <th>특성</th>
             <th>종류 / 적용방식</th>
+            <th>타입계수</th>
             <th>기본값</th>
-            <th style="text-align: center">코드값</th>
+            <th style="text-align: center">총합</th>
+            <th style="text-align: center">투자값</th>
           </tr>
         </thead>
       </table>
@@ -104,6 +120,37 @@
   <script type="text/javascript" src="{% static 'js/clipboard.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/datatables.min.js' %}"></script>
+
+  <script>
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  var csrftoken = getCookie('csrftoken');
+
+  function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+    }
+  });
+  </script>
+
   <script type="text/javascript">
     var table = $('#code-builder-table').DataTable({
       stateSave: true,
@@ -114,22 +161,24 @@
         "dataSrc": "",
       },
       "columns": [
-        {data: 'pk'},
-        {data: 'fields.description_ko'},
+        {data: 'index'},
+        {data: 'description_ko'},
         {
-            data: 'fields',
+            data: null,
             render: function ( data, type, row ) {
-                return data.modifier_type + ' / ' + data.effect_type
+                return data.kind + ' / ' + data.effect
             }
         },
-        {data: 'fields.default_value'},
+        {data: 'kind_coefficient'},
+        {data: 'default_value'},
+        {data: 'summary'},
         {
-          data: 'fields',
+          data: null,
           render: function ( data, type, row ) {
             var res_string = '<table class="value-controller" style="width: 100%;"><tr>' +
-                '<td style="width: 20%;"><i class="pe-7s-angle-left increase-arrow" name="down-button"></i></td>' +
-                '<td style="width: 60%; text-align: center">' + data.current_value + '</td>' +
-                '<td style="width: 20%;"><i class="pe-7s-angle-right increase-arrow" name="up-button"></i></td>' +
+                '<td style="width: 20%;"><i class="pe-7s-angle-left increase-arrow" name="dc-point"></i></td>' +
+                '<td style="width: 60%; text-align: center">' + data.invested_point + '</td>' +
+                '<td style="width: 20%;"><i class="pe-7s-angle-right increase-arrow" name="ic-point"></i></td>' +
                 '</tr></table>';
             return res_string;
           }
@@ -137,27 +186,17 @@
       ]
     });
 
-    $('#code-builder-table tbody').on('click', 'i[name="down-button"]', function () {
+    $('#code-builder-table tbody').on('click', 'i', function () {
         var data = table.row( $(this).parents('tr') ).data();
-        var dataString = 'subno=' + data.pk;
-      $.ajax({
-        type: "POST",
-        url: "{% url 'decrease-value' %}",
-        data: dataString,
-        success: function(args) {
-          table.ajax.reload( null, false );
-          document.getElementById('remind-point').innerHTML = 'Point: ' + args.message;
-        }
-      });
-    });
+        var action = $(this).attr('name');
 
-    $('#code-builder-table tbody').on('click', 'i[name="up-button"]', function () {
-        var data = table.row( $(this).parents('tr') ).data();
-        var dataString = 'subno=' + data.pk;
       $.ajax({
         type: "POST",
-        url: "{% url 'increase-value' %}",
-        data: dataString,
+        url: "{% url 'update-point' %}",
+        data: {
+            'subno': data.index,
+            'action': action
+        },
         success: function(args) {
           table.ajax.reload( null, false );
           document.getElementById('remind-point').innerHTML = 'Point: ' + args.message;

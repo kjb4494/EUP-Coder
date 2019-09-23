@@ -1,0 +1,122 @@
+[
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 1,
+    "fields": {
+      "modifier_type_name": "Military",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 2,
+    "fields": {
+      "modifier_type_name": "Navy",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 3,
+    "fields": {
+      "modifier_type_name": "Flagships",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 4,
+    "fields": {
+      "modifier_type_name": "Diplomacy",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 5,
+    "fields": {
+      "modifier_type_name": "Economy",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 6,
+    "fields": {
+      "modifier_type_name": "Technology",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 7,
+    "fields": {
+      "modifier_type_name": "Court",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 8,
+    "fields": {
+      "modifier_type_name": "Government",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 9,
+    "fields": {
+      "modifier_type_name": "Culture",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 10,
+    "fields": {
+      "modifier_type_name": "Stability",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 11,
+    "fields": {
+      "modifier_type_name": "Subject",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 12,
+    "fields": {
+      "modifier_type_name": "Espionage",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 13,
+    "fields": {
+      "modifier_type_name": "Religion",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 14,
+    "fields": {
+      "modifier_type_name": "Colonisation",
+      "increase_coefficient": 1
+    }
+  },
+  {
+    "model": "backend.tbmodifiertypesettingsinfo",
+    "pk": 15,
+    "fields": {
+      "modifier_type_name": "Trade",
+      "increase_coefficient": 1
+    }
+  }
+]

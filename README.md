@@ -9,6 +9,7 @@ pip install -r requirements.txt
 python3 manage.py makemigrations backend
 python3 manage.py migrate
 python3 manage.py createcachetable JsonFileChecksum
+python3 manage.py loaddata modifier-type-settings-info.json
 ```
 
 - 관리자 계정 생성

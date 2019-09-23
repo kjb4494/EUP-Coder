@@ -135,4 +135,4 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 JSON_FILENAME = 'modifier-info.json'
-POINT = 100
+POINT = 20

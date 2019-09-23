@@ -23,13 +23,11 @@ urlpatterns = [
     path('code-builder/', views.code_builder, name='code-builder'),
     path('code-builder/refresh/', views.refresh_cache, name='refresh-cache'),
 
-
     # 인증
     path('auth/login/', auth_views.LoginView.as_view(), name='login'),
     path('auth/logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     # API
     path('api/v1/modifier-info/', views.code_builder_json, name='code-builder-json'),
-    path('api/v1/modifier-info/increase-value/', views.increase_value, name='increase-value'),
-    path('api/v1/modifier-info/decrease-value/', views.decrease_value, name='decrease-value')
+    path('api/v1/modifier-info/update-point/', views.update_point, name='update-point')
 ]
