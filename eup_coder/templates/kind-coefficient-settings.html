@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.min.css' %}"/>
+  <style>
+    .increase-arrow{
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    #kind-coefficient-settings-table {
+      border-collapse: collapse;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    #kind-coefficient-settings-table thead th {
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      color: #369;
+      border-bottom: 3px solid #036;
+    }
+
+    #kind-coefficient-settings-table tbody th {
+      width: 150px;
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+      background: #f3f6f7;
+    }
+
+    #kind-coefficient-settings-table td {
+      width: 350px;
+      padding: 10px;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #kind-coefficient-settings-table th, #kind-coefficient-settings-table td {
+      overflow:hidden;
+      white-space : nowrap;
+      text-overflow: ellipsis;
+	  }
+
+    .value-controller tr {
+      background: none !important;
+    }
+
+    .value-controller td {
+      border: none !important;
+    }
+  </style>
+{% endblock css %}
+
+{% block page-title %}
+  <div class="page-title-icon">
+    <i class="pe-7s-box2 icon-gradient bg-amy-crisp"></i>
+  </div>
+  <div>Kind Coefficient Settings</div>
+{% endblock page-title %}
+
+{% block header-actions %}
+  <button class="btn-shadow mr-3 btn disabled" id="remind-point">Point: {{ point }}</button>
+  <button class="btn-shadow mr-3 btn btn-dark" onclick="location.href='{% url 'kind-coefficient-settings-refresh' %}'">초기화</button>
+{% endblock header-actions %}
+
+{% block page-content %}
+    <div style="margin-bottom: 20px">
+      <table class="table table-hover" id="kind-coefficient-settings-table" style="width: 100%">
+        <thead>
+          <tr>
+            <th>일련번호</th>
+            <th>카인드명</th>
+            <th style="text-align: center">카인드계수</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+{% endblock page-content %}
+
+{% block js %}
+  <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/datatables.min.js' %}"></script>
+
+  <script>
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  var csrftoken = getCookie('csrftoken');
+
+  function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+    }
+  });
+  </script>
+
+  <script type="text/javascript">
+    var table = $('#kind-coefficient-settings-table').DataTable({
+      stateSave: true,
+      "processing": true,
+      "ajax": {
+        "processing": true,
+        "url": "{% url 'kind-coefficient-settings-json' %}",
+        "dataSrc": "",
+      },
+      "columns": [
+        {data: 'pk'},
+        {data: 'fields.modifier_type_name'},
+        {
+          data: 'fields',
+          render: function ( data, type, row ) {
+            var res_string = '<table class="value-controller" style="width: 100%;"><tr>' +
+                '<td style="width: 20%;"><i class="pe-7s-angle-left increase-arrow" name="dc-point"></i></td>' +
+                '<td style="width: 60%; text-align: center">' + data.increase_coefficient + '</td>' +
+                '<td style="width: 20%;"><i class="pe-7s-angle-right increase-arrow" name="ic-point"></i></td>' +
+                '</tr></table>';
+            return res_string;
+          }
+        }
+      ]
+    });
+
+    $('#kind-coefficient-settings-table tbody').on('click', 'i', function () {
+        var data = table.row( $(this).parents('tr') ).data();
+        var action = $(this).attr('name');
+
+      $.ajax({
+        type: "POST",
+        url: "{% url 'update-kind-point' %}",
+        data: {
+            'subno': data.pk,
+            'action': action
+        },
+        success: function(args) {
+          table.ajax.reload( null, false );
+          document.getElementById('remind-point').innerHTML = 'Point: ' + args.message;
+        }
+      });
+    });
+  </script>
+{% endblock js %}

@@ -136,3 +136,4 @@ LOGOUT_REDIRECT_URL = '/'
 
 JSON_FILENAME = 'modifier-info.json'
 POINT = 20
+KIND_POINT = 20

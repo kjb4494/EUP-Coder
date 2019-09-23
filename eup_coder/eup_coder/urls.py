@@ -22,6 +22,8 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('code-builder/', views.code_builder, name='code-builder'),
     path('code-builder/refresh/', views.refresh_cache, name='refresh-cache'),
+    path('kind-coefficient-settings/', views.kind_coefficient_settings, name='kind-coefficient-settings'),
+    path('kind-coefficient-settings/refresh/', views.kind_coefficient_settings_refresh, name='kind-coefficient-settings-refresh'),
 
     # 인증
     path('auth/login/', auth_views.LoginView.as_view(), name='login'),
@@ -29,5 +31,7 @@ urlpatterns = [
 
     # API
     path('api/v1/modifier-info/', views.code_builder_json, name='code-builder-json'),
-    path('api/v1/modifier-info/update-point/', views.update_point, name='update-point')
+    path('api/v1/modifier-info/update-point/', views.update_point, name='update-point'),
+    path('api/v1/kind-coefficient-settings/', views.kind_coefficient_settings_json, name='kind-coefficient-settings-json'),
+    path('api/v1/kind-coefficient-settings/update-point/', views.update_kind_point, name='update-kind-point')
 ]

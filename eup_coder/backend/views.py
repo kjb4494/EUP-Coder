@@ -6,8 +6,9 @@ from backend.models import TbModifierSettingsInfo, TbModifierTypeSettingsInfo
 from django.core.cache import cache
 from functools import partial
 from django.conf import settings
+from django.core import serializers
 from django.db.models.functions import Cast
-from django.db.models import F, Q, Func, FloatField
+from django.db.models import F, Q, Func, FloatField, Sum
 from backend.json_response_helper import ok_message, bad_request_error
 
 import json
@@ -81,7 +82,9 @@ def code_builder_json(request):
         function = 'ROUND'
         arity = 2
 
-    db_modifier_info = TbModifierSettingsInfo.objects.filter(~Q(description_ko='없음')).annotate(
+    db_modifier_info = TbModifierSettingsInfo.objects.filter(
+        ~Q(description_ko='없음') and ~Q(modifier_type__increase_coefficient=0)
+    ).annotate(
         index=F('modifier_index'),
         kind=F('modifier_type__modifier_type_name'),
         kind_coefficient=F('modifier_type__increase_coefficient'),
@@ -139,3 +142,64 @@ def update_point(request):
     next_point = cache.get('point') - change_value
     cache.set('point', next_point, None)
     return ok_message(next_point)
+
+
+@requires_login
+def kind_coefficient_settings(request):
+    used_point = TbModifierTypeSettingsInfo.objects.aggregate(Sum('increase_coefficient'))['increase_coefficient__sum']
+    remaining_point = settings.KIND_POINT - used_point
+    res = {
+        'point': remaining_point
+    }
+    return render(request, 'kind-coefficient-settings.html', res)
+
+
+@auth_req_api
+def kind_coefficient_settings_json(request):
+    db_modifier_type_info = TbModifierTypeSettingsInfo.objects.all()
+    res = serializers.serialize('json', db_modifier_type_info)
+    return HttpResponse(res, content_type='application/json')
+
+
+@requires_login
+def kind_coefficient_settings_refresh(request):
+    TbModifierTypeSettingsInfo.objects.all().update(increase_coefficient=1)
+    return redirect(kind_coefficient_settings)
+
+
+@require_POST
+@auth_req_api
+def update_kind_point(request):
+    subno = request.POST.get('subno')
+    action = request.POST.get('action')
+
+    # 요구값 존재 확인
+    if not subno or not action:
+        return bad_request_error()
+
+    # 파라미터 타입 확인
+    try:
+        subno = int(subno)
+    except:
+        return bad_request_error()
+
+    # 파라미터 값 확인
+    action_range = ['dc-point', 'ic-point']
+    if action not in action_range:
+        return bad_request_error()
+    try:
+        ob_modifier_type_info = TbModifierTypeSettingsInfo.objects.get(modifier_type_index=subno)
+    except:
+        return bad_request_error()
+
+    # 액션값에 따라 데이터 갱신
+    if action == action_range[0]:
+        change_value = -1
+    else:
+        change_value = 1
+    ob_modifier_type_info.increase_coefficient += change_value
+    ob_modifier_type_info.save()
+
+    used_point = TbModifierTypeSettingsInfo.objects.aggregate(Sum('increase_coefficient'))['increase_coefficient__sum']
+    remaining_point = settings.KIND_POINT - used_point
+    return ok_message(remaining_point)
