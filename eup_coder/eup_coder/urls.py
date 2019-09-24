@@ -33,5 +33,6 @@ urlpatterns = [
     path('api/v1/modifier-info/', views.code_builder_json, name='code-builder-json'),
     path('api/v1/modifier-info/update-point/', views.update_point, name='update-point'),
     path('api/v1/kind-coefficient-settings/', views.kind_coefficient_settings_json, name='kind-coefficient-settings-json'),
-    path('api/v1/kind-coefficient-settings/update-point/', views.update_kind_point, name='update-kind-point')
+    path('api/v1/kind-coefficient-settings/update-point/', views.update_kind_point, name='update-kind-point'),
+    path('api/v1/built-code/', views.get_built_data, name='built-code')
 ]

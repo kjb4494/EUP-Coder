@@ -64,25 +64,21 @@
     <div class="theme-settings__inner">
       <div class="scrollbar-container">
         <div class="theme-settings__options-wrapper">
-
-          <h3 style="text-align: center; padding: 10px; cursor: pointer; color: #003366">
-            <span id="copy-button" data-clipboard-target="#result-code">Click here to result copy!</span>
-          </h3>
           <div class="main-card mb-3 card" style="margin: 20px">
+            <div class="card-header">
+              <i class="header-icon lnr-license icon-gradient bg-plum-plate"></i>code generator
+              <div class="btn-actions-pane-right">
+                <button class="btn-shadow btn-transition btn btn-outline-success" onclick="code_generate()">빌드하기</button>
+                <button class="btn-shadow btn-transition btn btn-outline-dark" id="copy-button" data-clipboard-target="#result-code">클립보드에 복사하기</button>
+              </div>
+            </div>
             <div class="card-body" id="result-code">
-              modified_code = {<br>
-                {% for code in code_generator %}
-                  &nbsp;&nbsp;&nbsp;&nbsp;{{ code.codename }} = {{ code.value }}<br>
-                {% endfor %}
-              }
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-
 {% endblock tooltip %}
 
 {% block page-title %}
@@ -94,8 +90,7 @@
 
 {% block header-actions %}
   <button class="btn-shadow mr-3 btn disabled" id="remind-point">Point: {{ point }}</button>
-  <button class="btn-shadow mr-3 btn btn-success" onclick="location.href='{% url 'code-builder' %}'">빌드하기</button>
-  <button class="btn-shadow mr-3 btn btn-dark" onclick="location.href='{% url 'refresh-cache' %}'">초기화</button>
+  <button class="btn-shadow mr-3 btn btn-danger" onclick="location.href='{% url 'refresh-cache' %}'">초기화</button>
 {% endblock header-actions %}
 
 {% block page-content %}
@@ -164,10 +159,10 @@
         {data: 'index'},
         {data: 'description_ko'},
         {
-            data: null,
-            render: function ( data, type, row ) {
-                return data.kind + ' / ' + data.effect
-            }
+          data: null,
+          render: function ( data, type, row ) {
+            return data.kind + ' / ' + data.effect
+          }
         },
         {data: 'kind_coefficient'},
         {data: 'default_value'},
@@ -176,10 +171,10 @@
           data: null,
           render: function ( data, type, row ) {
             var res_string = '<table class="value-controller" style="width: 100%;"><tr>' +
-                '<td style="width: 20%;"><i class="pe-7s-angle-left increase-arrow" name="dc-point"></i></td>' +
-                '<td style="width: 60%; text-align: center">' + data.invested_point + '</td>' +
-                '<td style="width: 20%;"><i class="pe-7s-angle-right increase-arrow" name="ic-point"></i></td>' +
-                '</tr></table>';
+              '<td style="width: 20%;"><i class="pe-7s-angle-left increase-arrow" name="dc-point"></i></td>' +
+              '<td style="width: 60%; text-align: center">' + data.invested_point + '</td>' +
+              '<td style="width: 20%;"><i class="pe-7s-angle-right increase-arrow" name="ic-point"></i></td>' +
+              '</tr></table>';
             return res_string;
           }
         }
@@ -194,15 +189,32 @@
         type: "POST",
         url: "{% url 'update-point' %}",
         data: {
-            'subno': data.index,
-            'action': action
+          'subno': data.index,
+          'action': action
         },
         success: function(args) {
           table.ajax.reload( null, false );
-          document.getElementById('remind-point').innerHTML = 'Point: ' + args.message;
+          console.log(args);
+          document.getElementById('remind-point').innerHTML = 'Point: ' + args.message.point;
         }
       });
     });
+
+    function code_generate() {
+      $.ajax({
+        type: "GET",
+        url: "{% url 'built-code' %}",
+        success: function(args) {
+          var result_code = 'modified_code = {<br>';
+          var built_code = JSON.parse(args.message);
+          built_code.forEach(function (data) {
+            result_code += '&nbsp;&nbsp;&nbsp;&nbsp;' + data.modifier_name + '=' + data.code_value + '<br>';
+          });
+          result_code += '}';
+          document.getElementById('result-code').innerHTML = result_code;
+        }
+      });
+    }
   </script>
   <script>
     $(document).on("mouseleave", "#copy-button", function(e) {
@@ -210,7 +222,7 @@
     });
 
     function showTooltip(elem, msg) {
-      elem.setAttribute('class','copy tooltipped tooltipped-s');
+      elem.setAttribute('class','btn-shadow btn-transition btn btn-outline-dark copy tooltipped tooltipped-s');
       elem.setAttribute('aria-label', msg);
     }
 

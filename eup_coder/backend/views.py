@@ -8,11 +8,16 @@ from functools import partial
 from django.conf import settings
 from django.core import serializers
 from django.db.models.functions import Cast
-from django.db.models import F, Q, Func, FloatField, Sum
-from backend.json_response_helper import ok_message, bad_request_error
+from django.db.models import F, Q, Func, FloatField
+from backend import data_helper, json_response_helper
 
 import json
 import hashlib
+
+
+class Round(Func):
+    function = 'ROUND'
+    arity = 2
 
 
 # Create your views here.
@@ -54,20 +59,7 @@ def code_builder(request):
 
         cache.set('md5_checksum', md5_checksum, None)
         cache.set('point', settings.POINT, None)
-
-    # Sidebar 출력 데이터 산출
-    code_data = []
-    db_modifier_info = TbModifierSettingsInfo.objects.filter(~Q(invested_point=0))
-    for data in db_modifier_info:
-        code_data.append({
-            'codename': data.modifier_name,
-            'value': data.invested_point
-        })
-    res = {
-        'code_generator': code_data,
-        'point': cache.get('point')
-    }
-    return render(request, 'code-builder.html', res)
+    return render(request, 'code-builder.html', {'point': cache.get('point')})
 
 
 @requires_login
@@ -78,10 +70,6 @@ def refresh_cache(request):
 
 @auth_req_api
 def code_builder_json(request):
-    class Round(Func):
-        function = 'ROUND'
-        arity = 2
-
     db_modifier_info = TbModifierSettingsInfo.objects.filter(
         ~Q(description_ko='없음') and ~Q(modifier_type__increase_coefficient=0)
     ).annotate(
@@ -115,22 +103,22 @@ def update_point(request):
 
     # 요구값 존재 확인
     if not subno or not action:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
 
     # 파라미터 타입 확인
     try:
         subno = int(subno)
     except:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
 
     # 파라미터 값 확인
     action_range = ['dc-point', 'ic-point']
     if action not in action_range:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
     try:
         ob_modifier_info = TbModifierSettingsInfo.objects.get(modifier_index=subno)
     except:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
 
     # 액션값에 따라 데이터 갱신
     if action == action_range[0]:
@@ -141,17 +129,12 @@ def update_point(request):
     ob_modifier_info.save()
     next_point = cache.get('point') - change_value
     cache.set('point', next_point, None)
-    return ok_message(next_point)
+    return json_response_helper.ok_message({'point': next_point})
 
 
 @requires_login
 def kind_coefficient_settings(request):
-    used_point = TbModifierTypeSettingsInfo.objects.aggregate(Sum('increase_coefficient'))['increase_coefficient__sum']
-    remaining_point = settings.KIND_POINT - used_point
-    res = {
-        'point': remaining_point
-    }
-    return render(request, 'kind-coefficient-settings.html', res)
+    return render(request, 'kind-coefficient-settings.html', {'point': data_helper.get_kind_point()})
 
 
 @auth_req_api
@@ -175,22 +158,22 @@ def update_kind_point(request):
 
     # 요구값 존재 확인
     if not subno or not action:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
 
     # 파라미터 타입 확인
     try:
         subno = int(subno)
     except:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
 
     # 파라미터 값 확인
     action_range = ['dc-point', 'ic-point']
     if action not in action_range:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
     try:
         ob_modifier_type_info = TbModifierTypeSettingsInfo.objects.get(modifier_type_index=subno)
     except:
-        return bad_request_error()
+        return json_response_helper.bad_request_error()
 
     # 액션값에 따라 데이터 갱신
     if action == action_range[0]:
@@ -199,7 +182,15 @@ def update_kind_point(request):
         change_value = 1
     ob_modifier_type_info.increase_coefficient += change_value
     ob_modifier_type_info.save()
+    return json_response_helper.ok_message(data_helper.get_kind_point())
 
-    used_point = TbModifierTypeSettingsInfo.objects.aggregate(Sum('increase_coefficient'))['increase_coefficient__sum']
-    remaining_point = settings.KIND_POINT - used_point
-    return ok_message(remaining_point)
+
+@auth_req_api
+def get_built_data(reqeust):
+    db_modifier_info = TbModifierSettingsInfo.objects.filter(~Q(invested_point=0)).annotate(
+        code_value=Round(Cast(
+            F('default_value') * F('modifier_type__increase_coefficient') * F('invested_point'), FloatField()
+        ), 2)
+    ).values('modifier_name', 'code_value')
+    res = json.dumps(list(db_modifier_info))
+    return json_response_helper.ok_message(res)
