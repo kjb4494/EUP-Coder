@@ -4,6 +4,7 @@
     "pk": 1,
     "fields": {
       "modifier_type_name": "Military",
+      "modifier_type_name_ko": "군사",
       "increase_coefficient": 1
     }
   },
@@ -12,6 +13,7 @@
     "pk": 2,
     "fields": {
       "modifier_type_name": "Navy",
+      "modifier_type_name_ko": "해군",
       "increase_coefficient": 1
     }
   },
@@ -20,7 +22,8 @@
     "pk": 3,
     "fields": {
       "modifier_type_name": "Flagships",
-      "increase_coefficient": 1
+      "modifier_type_name_ko": "없음",
+      "increase_coefficient": 0
     }
   },
   {
@@ -28,6 +31,7 @@
     "pk": 4,
     "fields": {
       "modifier_type_name": "Diplomacy",
+      "modifier_type_name_ko": "외교",
       "increase_coefficient": 1
     }
   },
@@ -36,6 +40,7 @@
     "pk": 5,
     "fields": {
       "modifier_type_name": "Economy",
+      "modifier_type_name_ko": "경제",
       "increase_coefficient": 1
     }
   },
@@ -44,6 +49,7 @@
     "pk": 6,
     "fields": {
       "modifier_type_name": "Technology",
+      "modifier_type_name_ko": "기술",
       "increase_coefficient": 1
     }
   },
@@ -52,6 +58,7 @@
     "pk": 7,
     "fields": {
       "modifier_type_name": "Court",
+      "modifier_type_name_ko": "궁정",
       "increase_coefficient": 1
     }
   },
@@ -60,6 +67,7 @@
     "pk": 8,
     "fields": {
       "modifier_type_name": "Government",
+      "modifier_type_name_ko": "정부",
       "increase_coefficient": 1
     }
   },
@@ -68,6 +76,7 @@
     "pk": 9,
     "fields": {
       "modifier_type_name": "Culture",
+      "modifier_type_name_ko": "문화",
       "increase_coefficient": 1
     }
   },
@@ -76,6 +85,7 @@
     "pk": 10,
     "fields": {
       "modifier_type_name": "Stability",
+      "modifier_type_name_ko": "안정",
       "increase_coefficient": 1
     }
   },
@@ -84,6 +94,7 @@
     "pk": 11,
     "fields": {
       "modifier_type_name": "Subject",
+      "modifier_type_name_ko": "속국",
       "increase_coefficient": 1
     }
   },
@@ -92,6 +103,7 @@
     "pk": 12,
     "fields": {
       "modifier_type_name": "Espionage",
+      "modifier_type_name_ko": "스파이",
       "increase_coefficient": 1
     }
   },
@@ -100,6 +112,7 @@
     "pk": 13,
     "fields": {
       "modifier_type_name": "Religion",
+      "modifier_type_name_ko": "종교",
       "increase_coefficient": 1
     }
   },
@@ -108,6 +121,7 @@
     "pk": 14,
     "fields": {
       "modifier_type_name": "Colonisation",
+      "modifier_type_name_ko": "식민지",
       "increase_coefficient": 1
     }
   },
@@ -116,6 +130,7 @@
     "pk": 15,
     "fields": {
       "modifier_type_name": "Trade",
+      "modifier_type_name_ko": "무역",
       "increase_coefficient": 1
     }
   }

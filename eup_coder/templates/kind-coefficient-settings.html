@@ -73,7 +73,8 @@
         <thead>
           <tr>
             <th>일련번호</th>
-            <th>카인드명</th>
+            <th>카인드명 원문</th>
+            <th>카인드명 번역</th>
             <th style="text-align: center">카인드계수</th>
           </tr>
         </thead>
@@ -127,6 +128,7 @@
       "columns": [
         {data: 'pk'},
         {data: 'fields.modifier_type_name'},
+        {data: 'fields.modifier_type_name_ko'},
         {
           data: 'fields',
           render: function ( data, type, row ) {

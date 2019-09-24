@@ -5,6 +5,7 @@ from django.db import models
 class TbModifierTypeSettingsInfo(models.Model):
     modifier_type_index = models.AutoField(db_column='Index', primary_key=True)
     modifier_type_name = models.CharField(db_column='Type', max_length=30)
+    modifier_type_name_ko = models.CharField(db_column='TypeKo', max_length=50)
     increase_coefficient = models.IntegerField(db_column='Coefficient')
 
     class Meta:

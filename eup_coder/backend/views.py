@@ -71,7 +71,7 @@ def refresh_cache(request):
 @auth_req_api
 def code_builder_json(request):
     db_modifier_info = TbModifierSettingsInfo.objects.filter(
-        ~Q(description_ko='없음') and ~Q(modifier_type__increase_coefficient=0)
+        ~Q(description_ko='없음'), ~Q(modifier_type__increase_coefficient=0)
     ).annotate(
         index=F('modifier_index'),
         kind=F('modifier_type__modifier_type_name'),
@@ -139,7 +139,7 @@ def kind_coefficient_settings(request):
 
 @auth_req_api
 def kind_coefficient_settings_json(request):
-    db_modifier_type_info = TbModifierTypeSettingsInfo.objects.all()
+    db_modifier_type_info = TbModifierTypeSettingsInfo.objects.filter(~Q(modifier_type_name_ko='없음'))
     res = serializers.serialize('json', db_modifier_type_info)
     return HttpResponse(res, content_type='application/json')
 
